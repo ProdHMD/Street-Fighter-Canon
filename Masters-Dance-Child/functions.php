@@ -12,6 +12,8 @@
 		 **/
 		// Erase this line to add a list.
 		'Neuzeit Grotesk Condensed' => 'neuzeit-grotesk-condensed',
+		'Neuzeit Grotesk' => 'neuzeit-grotesk',
+		'Neuzeit Grotesk Extra Condensed' => 'neuzeit-grotesk-extra-conden',
 	);
 
 	/* Custom Post Types */
