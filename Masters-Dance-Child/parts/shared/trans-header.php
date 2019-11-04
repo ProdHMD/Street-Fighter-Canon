@@ -2,15 +2,17 @@
 	global $hmd_theme_option;
 	if ( !empty( $hmd_theme_option['logo-menu'] ) ) {
 		$logo = $hmd_theme_option['logo-menu']['url'];
+    }
+    if ( !empty( $hmd_theme_option['trans-header-logo'] ) ) {
+		$trans_logo = $hmd_theme_option['trans-header-logo']['url'];
 	}
     $chat = $hmd_theme_option['site-header-chat'];
-    $chat_click = $hmd_theme_option['site-header-chat-click'];
     $phone = $hmd_theme_option['site-header-phone'];
 ?>
 
 <!-- Header Information -->
 <header id="header-container" class="container-fluid" data-scroll-header>
-    <div class="row" id="header-menu">
+    <div class="row large" id="trans-menu">
         <nav class="navbar navbar-expand-lg navbar-light col-lg-12" id="menu-container">
             <a href="<?php echo esc_url( home_url('/') ); ?>" class="navbar-brand float-left" id="navbar-brand">
                 <?php if( empty( $logo ) ) { ?>
