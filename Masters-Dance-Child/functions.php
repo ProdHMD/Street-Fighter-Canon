@@ -11,6 +11,7 @@
 		 ** Add list here, e.g.: 'FONT_NAME_HERE' => 'FONT_NAME_HERE',
 		 **/
 		// Erase this line to add a list.
+		'Neuzeit Grotesk Condensed' => 'neuzeit-grotesk-condensed',
 	);
 
 	/* Custom Post Types */
