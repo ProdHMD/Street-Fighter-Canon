@@ -71,6 +71,7 @@ Put your custom CSS here -------------------------------------------------------
 	transition: .2s ease-in-out all;
 }
 #content .button .button-text {
+	color: #FFF;
 	transform: skewX(20deg);
 	transition: .2s ease-in-out all;
 }
