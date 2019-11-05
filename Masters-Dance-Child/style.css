@@ -60,6 +60,8 @@ Put your custom CSS here -------------------------------------------------------
 	bottom: 0;
 	left: 0;
 	right: 0;
+	display: flex;
+    align-items: center;
 }
 .home #content .section h2 {
     font-size: 3rem;
