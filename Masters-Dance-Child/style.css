@@ -46,6 +46,9 @@ Put your custom CSS here -------------------------------------------------------
     width: 100%;
     top: 0;
 }
+#header-container .navbar-brand img {
+	max-height: none;
+}
 
 /* Content */
 #content {
