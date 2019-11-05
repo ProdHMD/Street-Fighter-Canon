@@ -126,21 +126,21 @@ Put your custom CSS here -------------------------------------------------------
 	display: flex;
 	align-items: center;
 }
-#content .section-top > .row {
+#content .top-section > .row {
 	width: 100%;
 }
-#content .section-top h1 {
+#content .top-section h1 {
 	font-size: 3rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .5rem;
 }
-#content .section-top h2 {
+#content .top-section h2 {
     font-size: 2rem;
 	font-weight: 300;
 	letter-spacing: .5rem;
 }
-#content .section-top h3 {
+#content .top-section h3 {
 	font-size: 2rem;
 	font-weight: 300;
 	letter-spacing: .5rem;
