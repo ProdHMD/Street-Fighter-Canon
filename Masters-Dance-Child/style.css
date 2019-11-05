@@ -61,7 +61,8 @@ Put your custom CSS here -------------------------------------------------------
     border: 2px solid #FFF;
     padding: 1rem 2rem;
     background: none;
-    transform: skewX(20deg);
+	transform: skewX(-20deg);
+	display: inline-flex;
 }
 #content .button .button-text {
     transform: skewX(20deg);
