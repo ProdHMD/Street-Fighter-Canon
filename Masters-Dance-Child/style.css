@@ -114,3 +114,34 @@ Put your custom CSS here -------------------------------------------------------
 	font-weight: 300;
 	letter-spacing: .5rem;
 }
+
+/* Top Section */
+#content .section {
+	height: 100vh;
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+}
+#content .section-top > .row {
+	width: 100%;
+}
+#content .section-top h1 {
+	font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+}
+#content .section-top h2 {
+    font-size: 2rem;
+	font-weight: 300;
+	letter-spacing: .5rem;
+}
+#content .section-top h3 {
+	font-size: 2rem;
+	font-weight: 300;
+	letter-spacing: .5rem;
+}
