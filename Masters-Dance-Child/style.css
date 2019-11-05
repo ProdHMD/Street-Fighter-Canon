@@ -51,9 +51,6 @@ Put your custom CSS here -------------------------------------------------------
 #content {
 	margin-top: 0 !important;
 }
-#content .button-container {
-	padding: 2rem 0;
-}
 #content .button {
     font-size: 1.5rem;
     font-weight: 300;
