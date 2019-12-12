@@ -38,7 +38,7 @@
                 'description'           => __( 'Entries that are downloadable on the site.', 'entry_cpt' ),
                 'labels'                => $labels,
                 'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
-                'taxonomies'            => array( 'entry_category', 'post_tag', 'location' ),
+                'taxonomies'            => array( 'games_timeline_tax' ),
                 'hierarchical'          => false,
                 'public'                => true,
                 'show_ui'               => true,

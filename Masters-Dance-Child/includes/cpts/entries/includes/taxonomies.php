@@ -36,7 +36,7 @@
                 'show_tagcloud'              => true,
                 'show_in_rest'               => true,
             );
-            register_taxonomy( 'games_timeline_tax', array( 'entries' ), $args );
+            register_taxonomy( 'games_timeline_tax', array( 'entry' ), $args );
 
         }
         add_action( 'init', 'games_timeline_tax', 0 );

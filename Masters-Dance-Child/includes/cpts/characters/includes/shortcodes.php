@@ -10,7 +10,7 @@
                 'orderby' => 'menu_order',
             ),
             $atts,
-            'chara_sort'
+            'character-sort'
         );
 
         ob_start();
@@ -21,7 +21,7 @@
         return ob_get_clean();
 
     }
-    add_shortcode( 'chara_sort', 'sort_chara_shortcode' );
+    add_shortcode( 'character-sort', 'sort_chara_shortcode' );
 
     // Add Shortcode
     function chara_list_shortcode( $atts ) {
@@ -34,7 +34,7 @@
                 'orderby' => 'menu_order',
             ),
             $atts,
-            'chara_list'
+            'character-list'
         );
 
         ob_start();
@@ -45,4 +45,4 @@
         return ob_get_clean();
 
     }
-    add_shortcode( 'chara_list', 'chara_list_shortcode' );
+    add_shortcode( 'character-list', 'chara_list_shortcode' );

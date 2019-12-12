@@ -36,7 +36,7 @@
                 'show_tagcloud'              => true,
                 'show_in_rest'               => true,
             );
-            register_taxonomy( 'games_chara_tax', array( 'characters' ), $args );
+            register_taxonomy( 'games_chara_tax', array( 'character' ), $args );
 
         }
         add_action( 'init', 'games_chara_tax', 0 );
