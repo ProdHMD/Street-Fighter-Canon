@@ -38,7 +38,7 @@
                 'description'           => __( 'Characters that are downloadable on the site.', 'character_cpt' ),
                 'labels'                => $labels,
                 'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
-                'taxonomies'            => array( 'games_chara_tax' ),
+                'taxonomies'            => array( 'games_chara_tax', 'canon_debut_tax', 'realtime_debut_tax' ),
                 'hierarchical'          => false,
                 'public'                => true,
                 'show_ui'               => true,

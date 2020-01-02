@@ -47,8 +47,16 @@ Put your custom CSS here -------------------------------------------------------
 	top: 0;
 	max-height: fit-content;
 }
+#header-container #menu-container {
+	margin-bottom: 0;
+}
 #header-container .navbar-brand img {
 	max-height: none;
+}
+
+/* Footer */
+#footer-container {
+	display: none;
 }
 
 /* Content */
@@ -88,6 +96,14 @@ Put your custom CSS here -------------------------------------------------------
 }
 
 /* Home */
+.home #navbar-brand {
+	opacity: 1;
+	transition: .2s ease-in-out;
+}
+.home #navbar-brand.hide-logo {
+    opacity: 0;
+    transition: .2s ease-in-out;
+}
 .home #content .section {
 	height: 100vh;
 	position: relative;
@@ -150,8 +166,67 @@ Put your custom CSS here -------------------------------------------------------
 	font-weight: 300;
 	letter-spacing: .5rem;
 }
+/* Bottom Section */
+#content .bottom-section {
+	min-height: 100vh;
+	height: auto;
+	padding-top: 114px;
+}
+#content .bottom-section > .row {
+    width: 100%;
+}
+
+/* Timeline */
 
 
+/* Characters */
+.characters #content #character-sort h2 {
+    font-size: 2.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+}
+.characters #content #sort-section {
+    font-size: 1.25rem;
+	letter-spacing: normal;
+	display: flex;
+    align-items: center;
+}
+.characters #content #sort-section #sort-inner {
+	margin-bottom: 0;
+    width: 100%;
+    text-align: right;
+}
+.characters #content #sort-section .list-title,
+.characters #content #sort-section .sort-item {
+    display: inline-block;
+    margin-right: 1rem;
+}
+.characters #content #sort-section li:last-child {
+    margin-right: 0;
+}
+.characters #content #sort-section .button .button-text {
+    font-size: 1.25rem;
+    letter-spacing: normal;
+}
+.characters #content #character-sort {
+    margin-bottom: 2rem;
+}
+.characters #content #list-section .character-slot {
+    margin-bottom: 1.5rem;
+}
+.characters #content #list-section .character-slot-inner {
+    border: 2px solid;
+	padding: 1rem;
+	height: 16rem;
+}
+.characters #content #list-section .slot-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 /* About Us */
 .about-us #content #credits-section .fsn-row {

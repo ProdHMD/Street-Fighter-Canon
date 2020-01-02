@@ -45,8 +45,85 @@
                     $(this).carousel('prev');
                 }
             });
+
+            // Hide Header Logo If Slide 1 Active
+            $('#navbar-brand').addClass('hide-logo');
+            $('#carousel-section').on('slide.bs.carousel', function onSlide(ev) {
+                var id = ev.relatedTarget.id;
+                switch (id) {
+                    case "home-section":
+                        $('#navbar-brand').addClass('hide-logo');
+                        break;
+                    default:
+                        $('#navbar-brand').removeClass('hide-logo');
+                }
+            });
         }
     }
     home();
+
+    // Timeline
+    function timeline() {
+        if($('main').hasClass('timeline')) {
+            // Init Carousel
+            $('#carousel-section').carousel({
+                pause: false,
+                ride: false,
+                keyboard: true,
+                wrap: false,
+                interval: false,
+            });
+            $('#carousel-section').bind('mousewheel', function(e) {
+                if(e.originalEvent.wheelDelta /120 < 0) {
+                    $(this).carousel('next');
+                } else {
+                    $(this).carousel('prev');
+                }
+            });
+        }
+    }
+    timeline();
+
+    // Characters
+    function characters() {
+        if($('main').hasClass('characters')) {
+            // Init Isotope
+            var $grid = $('.character-grid').isotope({
+                itemSelector: '.character-item',
+                layoutMode: 'fitRows',
+                getSortData: {
+                    name: '[data-name]',
+                    canonDebut: '[data-canon-debut]',
+                    realtimeDebut: '[data-realtime-debut]',
+                }
+            });
+
+            // Bind Button Click
+            $('#sort-inner').on('click','button',function() {
+                var sortFilter = $(this).attr('data-filter');
+                $grid.isotope({
+                    sortBy: sortFilter,
+                });
+            });
+
+            // Change 'is-checked' Button Class
+            $('#sort-inner').each(function(i,buttonGroup) {
+                var $buttonGroup = $(buttonGroup);
+                $buttonGroup.on('click','button',function() {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $(this).addClass('is-checked');
+                });
+            });
+        }
+    }
+    characters();
+
+    // About Us
+    function about() {
+        if($('main').hasClass('about-us')) {
+
+        }
+    }
+    about();
 
 })(jQuery, window, document);

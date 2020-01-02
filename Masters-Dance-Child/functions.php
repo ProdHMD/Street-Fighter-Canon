@@ -27,12 +27,12 @@
 	/** Add custom post types in /includes/cpts/ directory thru FTP.
 	 ** Add list here, e.g.: include_once('includes/cpts/POST_TYPE_NAME_HERE/POST_TYPE_NAME_HERE-cpt.php');
 	 **/
-	include_once('includes/cpts/entries/entries-cpt.php');
-	include_once('includes/cpts/characters/characters-cpt.php');
+	include_once( 'includes/cpts/entries/entries-cpt.php' );
+	include_once( 'includes/cpts/characters/characters-cpt.php' );
 
 	/* Remove Custom Post Types */
-	function delete_post_type(){
-		unregister_post_type('testimonials');
-		unregister_post_type('template');
+	function delete_post_type() {
+		unregister_post_type( 'testimonials' );
+		unregister_post_type( 'template' );
 	}
 	add_action( 'init', 'delete_post_type' );
