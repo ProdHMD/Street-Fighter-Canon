@@ -178,6 +178,15 @@ Put your custom CSS here -------------------------------------------------------
 
 /* Timeline */
 
+.timeline #content #entry-section .carousel-indicators {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    margin: 0 auto;
+}
+.timeline #content #entry-section .carousel-indicators li {
+    margin: 0;
+}
 
 /* Characters */
 .characters #content #character-sort h2 {
