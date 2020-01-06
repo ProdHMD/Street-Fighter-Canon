@@ -46,12 +46,16 @@ Put your custom CSS here -------------------------------------------------------
     width: 100%;
 	top: 0;
 	max-height: fit-content;
+	font-weight: 300;
 }
 #header-container #menu-container {
 	margin-bottom: 0;
 }
 #header-container .navbar-brand img {
 	max-height: none;
+}
+#header-container .nav-link span {
+    font-weight: 300;
 }
 
 /* Footer */
@@ -170,22 +174,84 @@ Put your custom CSS here -------------------------------------------------------
 #content .bottom-section {
 	min-height: 100vh;
 	height: auto;
-	padding-top: 114px;
 }
 #content .bottom-section > .row {
     width: 100%;
 }
 
 /* Timeline */
-
+.timeline #content #entry-section #entry-carousel {
+    min-height: 43.75rem;
+}
+.timeline #content #entry-section #entry-list-container {
+	margin-bottom: 2rem;
+	min-height: 65vh;
+}
+.timeline #content #entry-section .entry h2 {
+	font-weight: 900;
+    font-size: 7rem;
+    letter-spacing: 1rem;
+    margin-bottom: 0;
+}
+.timeline #content #entry-section .entry p {
+	font-weight: 300;
+    letter-spacing: normal;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+}
+.timeline #content #entry-section .game-timeline-list {
+	margin-bottom: 1.5rem;
+}
+.timeline #content #entry-section .game-timeline-list:after {
+    content: '';
+    height: 2px;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: 0 25px;
+    z-index: 1;
+}
+.timeline #content #entry-section .game-timeline-list .game {
+    display: inline-block;
+	margin-right: .5rem;
+	z-index: 2;
+}
+.timeline #content #entry-section .game-timeline-list .game:last-child {
+    margin-right: 0;
+}
+.timeline #content #entry-section .game-timeline-list .game img {
+    max-height: 3rem;
+}
+.timeline #content #entry-section .game-timeline-list .button {
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    z-index: 2;
+    background: #2b2b2d;
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+}
+.timeline #content #entry-section .game-timeline-list .button:hover {
+    background: #fff;
+}
 .timeline #content #entry-section .carousel-indicators {
-    position: relative;
+	position: relative;
     bottom: auto;
-    width: 100%;
+    width: 50vh;
     margin: 0 auto;
+    background-color: #707070;
+    justify-content: start;
 }
 .timeline #content #entry-section .carousel-indicators li {
-    margin: 0;
+	margin: 0;
+    height: .375rem;
+	width: 2rem;
+	background-color: transparent;
+}
+.timeline #content #entry-section .carousel-indicators li.active {
+	background-color: #fff;
 }
 
 /* Characters */

@@ -16,42 +16,34 @@
         ob_start();
         ?>
 
-            <div class="container-fluid" id="list-container">   
-                <div class="row character-grid" id="list-row">
-                    
-                    <?php
-                        $args = array(
-                            'post_type' => 'character',
-                            'nopaging' => true,
-                            'posts_per_page' => -1,
-                            'order' => $atts['order'],
-                            'orderby' => $atts['orderby'],
-                        );
-                        $query = new WP_Query( $args );
-                        if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
+            <div class="carousel-inner" id="entry-list-container">
 
-                        // Variables
-                        global $post;
-                        $attachment_id = get_post_thumbnail_id();
-                        $character_img = wp_get_attachment_image_src( $attachment_id, 'full', false );
-                        $slug = $post->post_name;
-                        $canon_debut = get_the_terms( $post->ID, 'canon_debut_tax' );
-                        $realtime_debut = get_the_terms( $post->ID, 'realtime_debut_tax' );
-                    ?>
+                <?php
+                    $args = array(
+                        'post_type' => 'entry',
+                        'nopaging' => true,
+                        'posts_per_page' => -1,
+                        'order' => $atts['order'],
+                        'orderby' => $atts['orderby'],
+                    );
+                    $query = new WP_Query( $args );
+                    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
 
-                        <div class="carousel-inner" id="entry-list-container">
+                    // Variables
+                    global $post;
+                ?>
 
-                            <div class="carousel-item">
+                    <div class="entry carousel-item" id="<?php echo $post->slug; ?>">
+                        <?php the_content(); ?>
+                    <!-- end .carousel-item --></div>
 
-                            <!-- end .carousel-item --></div>
+                <?php endwhile; wp_reset_postdata(); else : ?>
+                    <div class="carousel-item">
+                        <p><?php esc_html_e( 'Data empty. No timeline entries were found.' ); ?></p>
+                    <!-- end .carousel-item --></div>
+                <?php endif; ?>
 
-                        <!-- end .carousel-inner --></div>
-
-                    <?php endwhile; wp_reset_postdata(); else : ?>
-                        <div class="col-lg-12" id="portfolio-well">
-                            <p><?php esc_html_e( 'Data empty. No timeline entries were found.' ); ?></p>
-                        <!-- end #portfolio-well --></div>
-                    <?php endif; ?>
+            <!-- end #entry-list-container --></div>
 
         <?php
         return ob_get_clean();
@@ -76,13 +68,41 @@
         ob_start();
         ?>
 
-            <div class="game-timeline-list">
+        <div class="game-timeline-list">
 
-                <div class="game" id="<?php ?>">
+            <?php
+                $terms = get_terms(
+                    array(
+                        'taxonomy' => 'games_timeline_tax',
+                        'hide_empty' => false,
+                        'meta_key' => 'entry_canon_year',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'ASC',
+                    )
+                );
+                if( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
+            ?>
 
-                <!-- end .game --></div>
+                <?php foreach ( $terms as $term ) : ?>
+                    <?php $term_meta = get_term_meta( $term->term_id ); ?>
+                    <?php if( $term_meta['entry_conjecture'][0] === 'checked' ) : ?>
+                        <div class="game conjecture hidden" id="<?php echo $term->slug; ?>">
+                    <?php else : ?>
+                        <div class="game" id="<?php echo $term->slug; ?>">
+                    <?php endif; ?>
+                        <img src="<?php echo $term_meta['entry_game_logo'][0]; ?>" class="img-fluid" />
+                    <!-- end .game --></div>
+                <?php endforeach; ?>
 
-            <!-- end .game-timeline-list --></div>
+            <?php else : ?>
+                <div class="game">
+                    <p><?php esc_html_e( 'Data empty. No games were found.' ); ?></p>
+                <!-- end #entry-list-container --></div>
+            <?php endif; ?>
+
+            <a href="#toggle-conjecture" class="conjecture-hidden button"><span class="button-text"><span class="conjecture-text">Show</span> Conjecture</span></a>
+
+        <!-- end .game-timeline-list --></div>
 
         <?php
         return ob_get_clean();
@@ -109,7 +129,24 @@
 
             <ol class="carousel-indicators">
 
-                <li data-target="#carouselExampleIndicators"></li>
+                <?php
+                    $args = array(
+                        'post_type' => 'entry',
+                        'nopaging' => true,
+                        'posts_per_page' => -1,
+                        'order' => $atts['order'],
+                        'orderby' => $atts['orderby'],
+                    );
+                    $i = 0;
+                    $query = new WP_Query( $args );
+                    if( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();
+                ?>
+
+                    <li data-target="#entry-carousel" data-slide-to="<?php echo $i++; ?>" class="indicator"></li>
+
+                <?php endwhile; wp_reset_postdata(); else : ?>
+                    <p><?php esc_html_e( 'There are no indicators.' ); ?></p>
+                <?php endif; ?>
 
             <!-- end .carousel-indicators --></ol>
                         

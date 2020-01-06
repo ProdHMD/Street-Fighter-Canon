@@ -66,20 +66,24 @@
     function timeline() {
         if($('main').hasClass('timeline')) {
             // Init Carousel
-            $('#carousel-section').carousel({
+            $('#entry-carousel').carousel({
                 pause: false,
                 ride: false,
                 keyboard: true,
                 wrap: false,
                 interval: false,
             });
-            $('#carousel-section').bind('mousewheel', function(e) {
+            $('#entry-carousel').bind('mousewheel', function(e) {
                 if(e.originalEvent.wheelDelta /120 < 0) {
                     $(this).carousel('next');
                 } else {
                     $(this).carousel('prev');
                 }
             });
+
+            // Set active the first slide
+            $('#entry-carousel .carousel-item:first-child').addClass('active');
+            $('#entry-carousel .carousel-indicators .indicator:first-child').addClass('active');
         }
     }
     timeline();
