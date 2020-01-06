@@ -12,7 +12,11 @@
 <header id="header-container" class="container-fluid" data-scroll-header>
     <div class="row" id="header-menu">
         <nav class="navbar navbar-expand-lg navbar-light col-lg-12" id="menu-container">
-            <a href="<?php echo esc_url( home_url('/') ); ?>" class="navbar-brand float-left" id="navbar-brand">
+            <?php if( is_page('home') ) : ?>
+                <a href="<?php echo esc_url( home_url('/') ); ?>" class="navbar-brand float-left hide-logo" id="navbar-brand">
+            <?php else : ?>
+                <a href="<?php echo esc_url( home_url('/') ); ?>" class="navbar-brand float-left" id="navbar-brand">
+            <?php endif; ?>
                 <?php if( empty( $logo ) ) { ?>
                     <span><?php bloginfo('name'); ?></span>
                 <?php } else { ?>

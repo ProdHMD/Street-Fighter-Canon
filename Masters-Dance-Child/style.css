@@ -335,10 +335,47 @@ Put your custom CSS here -------------------------------------------------------
 }
 .about-us #content #curators-section .curator-item {
     display: inline-block;
-    width: 100%;
-    -webkit-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
+	width: 100%;
+	opacity: .3;
+    -webkit-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+.about-us #content #curators-section .curator-item.active {
+    opacity: 1;
+    -webkit-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+.about-us #content #curators-section .lljb3:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+	background: linear-gradient(to left, rgba(255,255,255,0) 0%,rgba(43,43,45,0.6) 5%,rgba(43,43,45,1) 25%);
+	transition: .2s ease-in-out all;
+}
+.about-us #content #curators-section .lljb3.active:before {
+	background: transparent;
+	transition: .2s ease-in-out all;
+}
+.about-us #content #curators-section .zerobeat:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(43,43,45,0.6) 5%,rgba(43,43,45,1) 25%);
+	transition: .2s ease-in-out all;
+}
+.about-us #content #curators-section .zerobeat.active:before {
+	background: transparent;
+	transition: .2s ease-in-out all;
 }
 .about-us #content #curators-section .curator-text {
     width: 100%;

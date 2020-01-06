@@ -130,4 +130,115 @@
     }
     about();
 
+    // BarbaJS
+    // Transition
+    var PageTransition = Barba.BaseTransition.extend({
+        start: function() {
+            Promise
+                .all([this.newContainerLoading, this.fadeOut()])
+                .then(this.fadeIn.bind(this));
+        },
+        fadeOut: function() {
+            return $(this.oldContainer).removeClass('slide-in').addClass('slide-out').animate({ opacity: 0, visibility: 'hidden' }, 500).promise();
+        },
+        fadeIn: function() {
+            var _this = this;
+            var $el = $(this.newContainer);
+
+            $(this.oldContainer).hide();
+
+            $el.css({
+                visibility: 'visible',
+                opacity: 0,
+            });
+
+            $(window).scrollTop(0);
+
+            $el.addClass(function() {
+                return 'slide-in';
+            }).animate({ opacity: 1 }, 500, function() {
+                _this.done();
+            });
+        },
+    });
+    Barba.Pjax.getTransition = function() {
+        return PageTransition;
+    };
+    // Home
+    var HomeContainer = Barba.BaseView.extend({
+        namespace: 'home-container',
+        onLeave: function() {
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function() {
+            // The Container has just been removed from the DOM.
+        },
+        onEnter: function() {
+            // The new Container is ready and attached to the DOM.
+            home();
+        },
+        onEnterCompleted: function() {
+            // The Transition has just finished.
+            content();
+        },
+    });
+    HomeContainer.init();
+    // Timeline
+    var TimelineContainer = Barba.BaseView.extend({
+        namespace: 'timeline-container',
+        onLeave: function() {
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function() {
+            // The Container has just been removed from the DOM.
+        },
+        onEnter: function() {
+            // The new Container is ready and attached to the DOM.
+            timeline();
+        },
+        onEnterCompleted: function() {
+            // The Transition has just finished.
+            content();
+        },
+    });
+    TimelineContainer.init();
+    // Characters
+    var CharactersContainer = Barba.BaseView.extend({
+        namespace: 'characters-container',
+        onLeave: function() {
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function() {
+            // The Container has just been removed from the DOM.
+        },
+        onEnter: function() {
+            // The new Container is ready and attached to the DOM.
+            characters();
+        },
+        onEnterCompleted: function() {
+            // The Transition has just finished.
+            content();
+        },
+    });
+    CharactersContainer.init();
+    // About
+    var AboutContainer = Barba.BaseView.extend({
+        namespace: 'characters-container',
+        onLeave: function() {
+            // A new Transition toward a new page has just started.
+        },
+        onLeaveCompleted: function() {
+            // The Container has just been removed from the DOM.
+        },
+        onEnter: function() {
+            // The new Container is ready and attached to the DOM.
+            about();
+        },
+        onEnterCompleted: function() {
+            // The Transition has just finished.
+            content();
+        },
+    });
+    AboutContainer.init();
+
 })(jQuery, window, document);
