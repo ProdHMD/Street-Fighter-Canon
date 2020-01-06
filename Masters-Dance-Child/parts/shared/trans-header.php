@@ -14,7 +14,11 @@
 <header id="header-container" class="container-fluid" data-scroll-header>
     <div class="row large" id="trans-menu">
         <nav class="navbar navbar-expand-lg navbar-light col-lg-12" id="menu-container">
-            <a href="<?php echo esc_url( home_url('/') ); ?>" class="navbar-brand float-left" id="navbar-brand">
+            <?php if( is_page('home') ) : ?>
+                <a href="<?php echo esc_url( home_url('/') ); ?>" class="navbar-brand float-left hide-logo" id="navbar-brand">
+            <?php else : ?>
+                <a href="<?php echo esc_url( home_url('/') ); ?>" class="navbar-brand float-left" id="navbar-brand">
+            <?php endif; ?>
                 <?php if( empty( $logo ) ) { ?>
                     <span><?php bloginfo('name'); ?></span>
                 <?php } else { ?>
@@ -56,3 +60,21 @@
         <!-- end #menu-container --></div>
     <!-- end #header-menu --></header>
 <!-- end #header-container --></header>
+
+<?php if( $hmd_theme_option['pjax-loader'] ) : ?>
+	<!-- Start BarbaJS -->
+	<div id="barba-wrapper">
+		<?php if( is_page('home') ) : ?>
+			<div class="barba-container" data-namespace="home-container">
+		<?php elseif( is_page('timeline') ) : ?>
+			<div class="barba-container" data-namespace="timeline-container">
+		<?php elseif( is_page('characters') ) : ?>
+			<div class="barba-container" data-namespace="characters-container">
+		<?php elseif( is_page('about-us') ) : ?>
+			<div class="barba-container" data-namespace="about-container">
+		<?php elseif( is_home() || is_singular('post') ) : ?>
+			<div class="barba-container" data-namespace="blog-container">
+		<?php else : ?>
+			<div class="barba-container" data-namespace="barba-container">
+		<?php endif; ?>
+<?php endif; ?>

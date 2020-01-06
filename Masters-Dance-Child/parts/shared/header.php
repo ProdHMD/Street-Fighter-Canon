@@ -58,3 +58,21 @@
         <!-- end #menu-container --></div>
     <!-- end #header-menu --></header>
 <!-- end #header-container --></header>
+
+<?php if( $hmd_theme_option['pjax-loader'] ) : ?>
+	<!-- Start BarbaJS -->
+	<div id="barba-wrapper">
+		<?php if( is_page('home') ) : ?>
+			<div class="barba-container" data-namespace="home-container">
+		<?php elseif( is_page('timeline') ) : ?>
+			<div class="barba-container" data-namespace="timeline-container">
+		<?php elseif( is_page('characters') ) : ?>
+			<div class="barba-container" data-namespace="characters-container">
+		<?php elseif( is_page('about-us') ) : ?>
+			<div class="barba-container" data-namespace="about-container">
+		<?php elseif( is_home() || is_singular('post') ) : ?>
+			<div class="barba-container" data-namespace="blog-container">
+		<?php else : ?>
+			<div class="barba-container" data-namespace="barba-container">
+		<?php endif; ?>
+<?php endif; ?>
