@@ -1,5 +1,31 @@
 (function($, window, document) {
 
+    // Header
+    function header() {
+        // Sticky Header
+        var menu = $('#header-container'),
+            origOffsetY = menu.offset().top;
+        function stickyHeader() {
+            function scroll() {
+                if ($(window).scrollTop() <= origOffsetY) {
+                    $('#header-container').removeClass('sticky');
+                    $('#content').removeClass('menu-padding');
+                } else {
+                    $('#header-container').addClass('sticky');
+                    $('#content').addClass('menu-padding');
+                }
+            }
+            document.onscroll = scroll;
+        }
+        stickyHeader();
+
+        // Remove Hide Logo Class If Not Home
+        if(!$('main').hasClass('home')) {
+            $('#navbar-brand').removeClass('hide-logo');
+        }
+    }
+    header();
+
     // Content
     function content() {
         // Make Full Height
@@ -58,6 +84,26 @@
                         $('#navbar-brand').removeClass('hide-logo');
                 }
             });
+
+            // Calculate Video Width & Height
+            function videoHeight() {
+                var windowHeight = $(window).innerHeight(),
+                    aspectRatio = 16/9;
+                    videoWidth = Math.round(windowHeight * aspectRatio);
+                $('.video-container #video-background').each(function() {
+                    $(this).css({
+                        'height' : windowHeight,
+                        'width' : videoWidth
+                    });
+                });
+                $('.video-overlay').each(function() {
+                    $(this).css({
+                        'height' : windowHeight,
+                        'width' : videoWidth
+                    });
+                });
+            }
+            videoHeight();
         }
     }
     home();
@@ -81,9 +127,24 @@
                 }
             });
 
-            // Set active the first slide
+            // Set Active The First Slide
             $('#entry-carousel .carousel-item:first-child').addClass('active');
             $('#entry-carousel .carousel-indicators .indicator:first-child').addClass('active');
+
+            // Detect Fully Visible Element & Change Scroll Direction
+            $(window).on("scroll", function() {
+                $('#entry-carousel').on('slide.bs.carousel', function (e) {
+                    var index = $(e.target).find(".active").index();
+                    if(index === 0) {
+                        $('body').css('overflow','hidden');
+                        $('main.timeline').css('overflow','auto');
+                        $('body').scrollTop($('main').height());
+                    } else {
+                        $('body').css('overflow','auto');
+                        $('main.timeline').css('overflow','auto');
+                    }
+                });
+            });
         }
     }
     timeline();
@@ -153,6 +214,7 @@
             });
 
             $(window).scrollTop(0);
+            $('body').css('overflow','auto');
 
             $el.addClass(function() {
                 return 'slide-in';
@@ -179,6 +241,7 @@
         },
         onEnterCompleted: function() {
             // The Transition has just finished.
+            header();
             content();
         },
     });
@@ -198,6 +261,7 @@
         },
         onEnterCompleted: function() {
             // The Transition has just finished.
+            header();
             content();
         },
     });
@@ -217,6 +281,7 @@
         },
         onEnterCompleted: function() {
             // The Transition has just finished.
+            header();
             content();
         },
     });
@@ -236,6 +301,7 @@
         },
         onEnterCompleted: function() {
             // The Transition has just finished.
+            header();
             content();
         },
     });

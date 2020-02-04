@@ -22,9 +22,6 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header' ) ); ?>
 
-<!-- Main Information -->
-<main <?php body_class(); ?>>
-
 <?php if ( $trans_page_opt == 'on' ) : ?> 
     <?php if ( $trans_opt ) : ?>
         <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/trans-header' ) ); ?>
@@ -38,6 +35,9 @@
         <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/header' ) ); ?>
     <?php endif; ?>
 <?php endif; ?>
+
+<!-- Main Information -->
+<main <?php body_class(); ?>>
 
 <!-- Content Information -->
 <div class="container-fluid" id="content">
