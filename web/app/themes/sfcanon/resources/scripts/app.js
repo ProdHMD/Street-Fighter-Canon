@@ -1,4 +1,7 @@
+// Import external dependencies
 import domReady from '@roots/sage/client/dom-ready';
+import 'jquery';
+import 'bootstrap';
 
 /**
  * Application entrypoint

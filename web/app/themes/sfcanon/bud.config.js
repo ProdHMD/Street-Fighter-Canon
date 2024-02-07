@@ -23,7 +23,7 @@ export default async (app) => {
    *
    * @see {@link https://bud.js.org/reference/bud.setPublicPath}
    */
-  app.setPublicPath('/app/themes/sage/public/');
+  app.setPublicPath('/app/themes/sfcanon/public/');
 
   /**
    * Development server settings
@@ -36,6 +36,10 @@ export default async (app) => {
     .setUrl('http://localhost:3000')
     .setProxyUrl('http://example.test')
     .watch(['resources/views', 'app']);
+
+  app.provide({
+    jquery: ["jQuery", "$"],
+  })
 
   /**
    * Generate WordPress `theme.json`
@@ -73,8 +77,5 @@ export default async (app) => {
       typography: {
         customFontSize: false,
       },
-    })
-    .useTailwindColors()
-    .useTailwindFontFamily()
-    .useTailwindFontSize();
+    });
 };
