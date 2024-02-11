@@ -28,6 +28,42 @@
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "gplvault/gplvault",
+        "version": "5.0.1",
+        "type": "wordpress-plugin",
+        "dist": {
+          "url" : "gplv-plugins/gplvault-updater.zip",
+          "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "acf/acfpro",
+        "version": "6.2.4",
+        "type": "wordpress-plugin",
+        "dist": {
+          "url": "gplv-plugins/advanced-custom-fields-pro.zip",
+          "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-media/wp-rocket",
+        "version": "3.15.6",
+        "type": "wordpress-plugin",
+        "dist": {
+          "url": "gplv-plugins/wp-rocket.zip",
+          "type": "zip"
+        }
+      }
     }
   ],
   "require": {
@@ -40,7 +76,16 @@
     "roots/wordpress": "6.4.3",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
-    "wpackagist-theme/twentytwentyfour": "^1.0"
+    "wpackagist-theme/twentytwentyfour": "^1.0",
+    "roots/acorn": "^4.0",
+    "gplvault/gplvault": "^5.0",
+    "acf/acfpro": "^6.2",
+    "wp-media/wp-rocket": "^3.15",
+    "wpackagist-plugin/bye-felicia": "^1.1",
+    "wpackagist-plugin/wordpress-seo": "^22.0",
+    "wpackagist-plugin/jetpack": "^13.1",
+    "owenvoke/blade-fontawesome": "^2.5",
+    "wpackagist-plugin/classic-editor": "^1.6"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
@@ -65,8 +110,14 @@
     "wordpress-install-dir": "web/wp"
   },
   "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
     "test": [
       "phpcs"
+    ],
+    "post-autoload-dump": [
+      "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
     ]
   }
 }
