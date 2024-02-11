@@ -1688,6 +1688,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@barba/core@npm:^2.9.7":
+  version: 2.9.7
+  resolution: "@barba/core@npm:2.9.7"
+  dependencies:
+    is-promise: ^2.1.0
+    path-to-regexp: ^3.0.0
+  checksum: 4cd40664810242acf752667e773aab0c56fed4fa482b6c6091f5a127588e39ca4ac1c125bbaf33de07b8509b60c4a60337bb880dd4c40ab13a8a6bcee7e18e96
+  languageName: node
+  linkType: hard
+
 "@csstools/cascade-layer-name-parser@npm:^1.0.5, @csstools/cascade-layer-name-parser@npm:^1.0.6":
   version: 1.0.6
   resolution: "@csstools/cascade-layer-name-parser@npm:1.0.6"
@@ -2334,6 +2344,13 @@ __metadata:
     "@jridgewell/resolve-uri": ^3.0.3
     "@jridgewell/sourcemap-codec": ^1.4.10
   checksum: b9537b9630ffb631aef9651a085fe361881cde1772cd482c257fe3c78c8fd5388d681f504a9c9fe1081b1c05e8f75edf55ee10fdb58d92bbaa8dbf6a7bd6b18c
+  languageName: node
+  linkType: hard
+
+"@juggle/resize-observer@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@juggle/resize-observer@npm:3.4.0"
+  checksum: 2505028c05cc2e17639fcad06218b1c4b60f932a4ebb4b41ab546ef8c157031ae377e3f560903801f6d01706dbefd4943b6c4704bf19ed86dfa1c62f1473a570
   languageName: node
   linkType: hard
 
@@ -3077,6 +3094,13 @@ __metadata:
   version: 0.27.8
   resolution: "@sinclair/typebox@npm:0.27.8"
   checksum: 00bd7362a3439021aa1ea51b0e0d0a0e8ca1351a3d54c606b115fdcc49b51b16db6e5f43b4fe7a28c38688523e22a94d49dd31168868b655f0d4d50f032d07a1
+  languageName: node
+  linkType: hard
+
+"@studio-freight/lenis@npm:^1.0.34":
+  version: 1.0.34
+  resolution: "@studio-freight/lenis@npm:1.0.34"
+  checksum: fe926afbfe75fc2aaa87137f003cb3fdee3a884a4c788ea895c9f6082b601b9e29969eb0ec3bf085bf14bd231c9bef0d565e4a6d7046d585bb26b0b68a749e6f
   languageName: node
   linkType: hard
 
@@ -6994,6 +7018,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gsap@npm:^3.12.5":
+  version: 3.12.5
+  resolution: "gsap@npm:3.12.5"
+  checksum: 60b99dc4482992ba86013963ee9a97a5ec62d480495dd85764788913245aa08cfd202c1df4bbc7592e43d5faa885127bec75f77266f2964fe3d3b559ab63f852
+  languageName: node
+  linkType: hard
+
 "hard-rejection@npm:^2.1.0":
   version: 2.1.0
   resolution: "hard-rejection@npm:2.1.0"
@@ -7821,6 +7852,13 @@ __metadata:
   version: 5.0.0
   resolution: "is-plain-object@npm:5.0.0"
   checksum: e32d27061eef62c0847d303125440a38660517e586f2f3db7c9d179ae5b6674ab0f469d519b2e25c147a1a3bc87156d0d5f4d8821e0ce4a9ee7fe1fcf11ce45c
+  languageName: node
+  linkType: hard
+
+"is-promise@npm:^2.1.0":
+  version: 2.2.2
+  resolution: "is-promise@npm:2.2.2"
+  checksum: 18bf7d1c59953e0ad82a1ed963fb3dc0d135c8f299a14f89a17af312fc918373136e56028e8831700e1933519630cc2fd4179a777030330fde20d34e96f40c78
   languageName: node
   linkType: hard
 
@@ -9838,6 +9876,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"path-to-regexp@npm:^3.0.0":
+  version: 3.2.0
+  resolution: "path-to-regexp@npm:3.2.0"
+  checksum: c3d35cda3b26d9e604d789b9a1764bb9845f53ca8009d5809356b4677a3c064b0f01117a05a5b4b77bafd5ae002a82592e3f3495e885c22961f8b1dab8bd6ae7
+  languageName: node
+  linkType: hard
+
 "path-type@npm:^4.0.0":
   version: 4.0.0
   resolution: "path-type@npm:4.0.0"
@@ -11460,6 +11505,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sage@workspace:."
   dependencies:
+    "@barba/core": ^2.9.7
+    "@juggle/resize-observer": ^3.4.0
     "@popperjs/core": ^2.11.8
     "@roots/bud": 6.20.0
     "@roots/bud-eslint": ^6.20.0
@@ -11468,7 +11515,9 @@ __metadata:
     "@roots/bud-stylelint": ^6.20.0
     "@roots/eslint-config": ^6.20.0
     "@roots/sage": 6.20.0
+    "@studio-freight/lenis": ^1.0.34
     bootstrap: ^5.3.2
+    gsap: ^3.12.5
   languageName: unknown
   linkType: soft
 

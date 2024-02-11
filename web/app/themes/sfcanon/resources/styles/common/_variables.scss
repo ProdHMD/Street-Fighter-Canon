@@ -1,0 +1,28 @@
+/** Colors */
+$black: #17171a;
+$blue: #4169b2;
+$red: #b93461;
+$white: #fff;
+
+/** Social media colors */
+$instagram: #c32aa3;
+$facebook: #1877f2;
+$twitter: #1da1f2;
+$youtube: #ff0000;
+$google: #ea4335;
+
+/** Font variables */
+$city_brawlers: city-brawlers, sans-serif;
+$sf_pro_text: sf-pro-text, sans-serif;
+
+/** WordPress grid breakpoint */
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    wpmd: 783px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1441px,
+    xxxl: 1921px,
+);
