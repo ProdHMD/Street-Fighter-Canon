@@ -1,6 +1,48 @@
 /** Home page */
 .main {
     &#home {
-        // Stuff goes here
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        min-height: calc(100vh - 6.25rem);
+
+        .logged-in & {
+            min-height: calc(100vh - (6.25rem + 2rem));
+
+            @include media-breakpoint-down(wpmd) {
+                min-height: calc(100vh - (6.25rem + 2.875rem));
+            }
+        }
+
+        #content {
+            padding-bottom: 6.25rem;
+
+            p {
+                max-width: 85%;
+                font-size: 2.25rem;
+
+                @include media-breakpoint-down(xl) {
+                    max-width: none;
+                    font-size: 2.25rem;
+                }
+
+                @include media-breakpoint-down(md) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            h2 {
+                font-size: 14rem;
+                line-height: 0.7054;
+
+                @include media-breakpoint-down(xl) {
+                    font-size: 9.75rem;
+                }
+
+                @include media-breakpoint-down(md) {
+                    font-size: 5.75rem;
+                }
+            }
+        }
     }
 }

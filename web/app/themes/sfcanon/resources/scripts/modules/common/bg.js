@@ -5,24 +5,20 @@ export const bg = async (err) => {
 
   /** Run onPage function */
   $('#canvas #home.canvas').removeClass('show');
+  $('#canvas #timeline.canvas').removeClass('show');
+  $('#canvas #characters.canvas').removeClass('show');
   $('#canvas #about.canvas').removeClass('show');
   onPage();
 
   /** Turn on background if on certain pages */
   function onPage() {
+    // Get id of main element
+    var pageId = $('main').attr('id');
+
     // Pass thru the show class to the correpsonding canvas element
-    if ($.inArray($('main').attr('id'), ['home','shows','blog']) >= 0) {
-      $('#canvas #home.canvas').addClass('show');
-      $('#canvas #about.canvas').removeClass('show');
-      setCanvas();
-    } else if ($.inArray($('main').attr('id'), ['about']) >= 0) {
-      $('#canvas #about.canvas').addClass('show');
-      $('#canvas #home.canvas').removeClass('show');
-      setCanvas();
-    } else {
-      $('#canvas #home.canvas').removeClass('show');
-      $('#canvas #about.canvas').removeClass('show');
-    }
+    $('#canvas').children().not('#'+pageId).removeClass('show');
+    $('#canvas').children('#'+pageId).addClass('show');
+    setCanvas();
 
     // Add resize listener
     $(window).on('resize', function() {
@@ -52,6 +48,7 @@ export const bg = async (err) => {
     // Run the scripts on the canvas
     $('.canvas').height(viewportHeight).width(viewportWidth);
     $('.canvas').children('.background-media').height(videoHeight).width(videoWidth);
+    $('.canvas-color').height(videoHeight).width(videoWidth);
   }
 };
 

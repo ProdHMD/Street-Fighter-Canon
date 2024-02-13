@@ -4,9 +4,9 @@ import 'jquery';
 import 'bootstrap';
 
 // Import custom modules
-import { lenisinit } from './modules/common/lenis.js';
+//import { lenisinit } from './modules/common/lenis.js';
 import { bg } from './modules/common/bg.js';
-import { barbainit } from './modules/common/barba.js';
+//import { barbainit } from './modules/common/barba.js';
 
 /**
  * Application entrypoint
@@ -16,10 +16,10 @@ domReady(async () => {
   bg();
 
   // Init lenisJS
-  lenisinit();
+  //lenisinit();
 
   // Init barbaInitJS
-  barbainit();
+  //barbainit();
 });
 
 /**

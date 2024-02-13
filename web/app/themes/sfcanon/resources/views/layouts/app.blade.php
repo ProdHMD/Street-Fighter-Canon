@@ -1,3 +1,19 @@
+<?php
+  global $post;
+  if ($post) {
+    $post_id = $post->ID;
+
+    if (is_singular('characters')) {
+      $post_slug = 'bio';
+    } else {
+      $post_slug = $post->post_name; 
+    }
+  } else {
+    $post_id = '';
+    $post_slug = '';
+  }
+?>
+
 <!doctype html>
 <html @php(language_attributes())>
   <head>
@@ -11,13 +27,13 @@
     @php(wp_body_open())
 
     <div id="app">
-      <a class="sr-only focus:not-sr-only" href="#main">
+      <a class="sr-only sr-only-focusable visually-hidden" href="#content">
         {{ __('Skip to content') }}
       </a>
 
       @include('sections.header')
 
-      <main id="main" class="main">
+      <main id="<?php echo $post_slug; ?>" class="main">
         @yield('content')
       </main>
 
@@ -27,7 +43,7 @@
         </aside>
       @endif
 
-      @include('sections.footer')
+      @include('sections.background')
     </div>
 
     @php(do_action('get_footer'))
