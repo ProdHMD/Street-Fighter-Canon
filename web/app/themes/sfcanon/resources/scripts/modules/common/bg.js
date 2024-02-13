@@ -18,9 +18,17 @@ export const bg = async (err) => {
     // Pass thru the show class to the correpsonding canvas element
     $('#canvas').children().not('#'+pageId).removeClass('show');
     $('#canvas').children('#'+pageId).addClass('show');
-    setCanvas();
 
-    // Add resize listener
+    // Play video if show class is active
+    $('.canvas').each(function() {
+      if ($(this).hasClass('show')) {
+        $(this).siblings().children()[0].pause();
+        $(this).children()[0].play();
+      }
+    });
+
+    // Run set canvas
+    setCanvas();
     $(window).on('resize', function() {
       setCanvas();
     });
