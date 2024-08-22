@@ -28,5 +28,22 @@
                 }
             }
         }
+
+        .nav-primary {
+            @include text_size_24;
+
+            margin: 0.532rem 6.25rem 0.532rem 0;
+
+            .menu-item {
+                a {
+                    font-family: $sf_pro_text;
+                    font-weight: 400;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $white;
+                    line-height: normal;
+                }
+            }
+        }
     }
 }

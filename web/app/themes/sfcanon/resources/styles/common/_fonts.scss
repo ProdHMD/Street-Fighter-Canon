@@ -1,10 +1,15 @@
-/** American Captain font */
+/** City Brawlers font */
 @font-face {
     font-display: swap;
     font-family: city-brawlers;
     font-style: normal;
     font-weight: bold;
-    src: url('~@fonts/CityBrawlersBoldCaps.otf') format('opentype'),
+    src: url('~@fonts/CityBrawlersBoldCaps.woff') format('woff'),
+         url('~@fonts/CityBrawlersBoldCaps.woff2') format('woff2'),
+         url('~@fonts/CityBrawlersBoldCaps.otf') format('opentype'),
+         url('~@fonts/CityBrawlersBoldCaps.ttf') format('truetype'),
+         url('~@fonts/CityBrawlersBoldCaps.eot') format('eot'),
+         url('~@fonts/CityBrawlersBoldCaps.svg#CityBrawlersBoldCaps') format('svg');
 }
 
 /** SF Pro Text */
