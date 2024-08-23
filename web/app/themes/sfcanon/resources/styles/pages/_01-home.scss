@@ -4,13 +4,13 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-end;
-        min-height: calc(100vh - 6.25rem);
+        min-height: 100vh;
 
         .logged-in & {
-            min-height: calc(100vh - (6.25rem + 2rem));
+            min-height: calc(100vh - 2rem);
 
             @include media-breakpoint-down(wpmd) {
-                min-height: calc(100vh - (6.25rem + 2.875rem));
+                min-height: calc(100vh - 2.875rem);
             }
         }
 
@@ -20,14 +20,17 @@
             p {
                 max-width: 85%;
                 font-size: 2.25rem;
+                line-height: 1.25;
 
                 @include media-breakpoint-down(xl) {
                     max-width: none;
                     font-size: 2.25rem;
+                    line-height: 1.25;
                 }
 
                 @include media-breakpoint-down(md) {
                     font-size: 1.5rem;
+                    line-height: 1;
                 }
             }
 
@@ -41,6 +44,10 @@
 
                 @include media-breakpoint-down(md) {
                     font-size: 5.75rem;
+                }
+
+                a {
+                    text-decoration: none;
                 }
             }
         }

@@ -101,61 +101,88 @@ html {
             font-family: $city_brawlers;
             color: $white;
         }
-    }
 
-    /** Page header */
-    .page-header {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-end;
-        min-height: calc(100vh - 6.25rem);
+        /** Page header */
+        .page-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            min-height: calc(100vh - 6.25rem);
+            margin-bottom: 6.25rem;
 
-        .logged-in & {
-            min-height: calc(100vh - (6.25rem + 2rem));
+            .logged-in & {
+                min-height: calc(100vh - (6.25rem + 2rem));
+                margin-bottom: calc(6.25rem + 2rem);
 
-            @include media-breakpoint-down(wpmd) {
-                min-height: calc(100vh - (6.25rem + 2.875rem));
+                @include media-breakpoint-down(wpmd) {
+                    min-height: calc(100vh - (6.25rem + 2.875rem));
+                    margin-bottom: calc(6.25rem + 2.875rem);
+                }
+            }
+
+            #header-content {
+                h1 {
+                    font-size: 14rem;
+                    line-height: 0.7054;
+                    margin-bottom: 1rem;
+
+                    @include media-breakpoint-down(xl) {
+                        font-size: 9.75rem;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 5.75rem;
+                    }
+                }
+
+                p {
+                    max-width: 85%;
+                    font-size: 2.25rem;
+                    line-height: 1.25;
+                    margin-bottom: 3.5rem;
+
+                    @include media-breakpoint-down(xl) {
+                        max-width: none;
+                        font-size: 2.25rem;
+                    }
+
+                    @include media-breakpoint-down(md) {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .scroll-down-btn {
+                    background-image: url('../../images/svgs/sf-border.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    padding: 1rem 4.65rem;
+                    text-decoration: none;
+                    font-weight: 400;
+                    transition: all .125s ease-in-out;
+
+                    &:hover {
+                        background-image: url('../../images/svgs/sf-fill.svg');
+                        color: $black;
+                        text-decoration: none;
+                        transition: all .125s ease-in-out;
+                    }
+                }
             }
         }
 
-        #content {
-            padding-bottom: 6.25rem;
+        /** Content */
+        #main-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: $white;
 
-            h1 {
-                font-size: 14rem;
-                line-height: 0.7054;
+            .logged-in & {
+                min-height: calc(100vh - 2rem);
 
-                @include media-breakpoint-down(xl) {
-                    font-size: 9.75rem;
-                }
-
-                @include media-breakpoint-down(md) {
-                    font-size: 5.75rem;
-                }
-            }
-
-            p {
-                max-width: 85%;
-                font-size: 2.25rem;
-
-                @include media-breakpoint-down(xl) {
-                    max-width: none;
-                    font-size: 2.25rem;
-                }
-
-                @include media-breakpoint-down(md) {
-                    font-size: 1.5rem;
-                }
-            }
-
-            .scroll-down-btn {
-                background-image: url('../../images/svgs/sf-border.svg');
-                background-size: cover;
-                background-repeat: no-repeat;
-                padding: 1rem 4.65rem;
-
-                &:hover {
-                    background-image: url('../../images/svgs/sf-border.svg');
+                @include media-breakpoint-down(wpmd) {
+                    min-height: calc(100vh - 2.875rem);
                 }
             }
         }

@@ -1688,13 +1688,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@barba/core@npm:^2.9.7":
-  version: 2.9.7
-  resolution: "@barba/core@npm:2.9.7"
+"@barba/core@npm:^2.10.3":
+  version: 2.10.3
+  resolution: "@barba/core@npm:2.10.3"
   dependencies:
-    is-promise: ^2.1.0
-    path-to-regexp: ^3.0.0
-  checksum: 4cd40664810242acf752667e773aab0c56fed4fa482b6c6091f5a127588e39ca4ac1c125bbaf33de07b8509b60c4a60337bb880dd4c40ab13a8a6bcee7e18e96
+    is-promise: ^4.0.0
+    path-to-regexp: ^6.2.2
+  checksum: 9d08f78ec451fc2e80ad8332ba85bfa54a2394dc321edcb97730251c6ffc208f944813a45cdf8192884c58887a6570ae6e7e233048b366a6beef6884f268903c
   languageName: node
   linkType: hard
 
@@ -3097,10 +3097,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@studio-freight/lenis@npm:^1.0.34":
-  version: 1.0.34
-  resolution: "@studio-freight/lenis@npm:1.0.34"
-  checksum: fe926afbfe75fc2aaa87137f003cb3fdee3a884a4c788ea895c9f6082b601b9e29969eb0ec3bf085bf14bd231c9bef0d565e4a6d7046d585bb26b0b68a749e6f
+"@studio-freight/lenis@npm:^1.0.42":
+  version: 1.0.42
+  resolution: "@studio-freight/lenis@npm:1.0.42"
+  checksum: 506e1ee1277efb54ade2c02ba1cfe5ab096b06d306102987f8ae4e48be19f6f294b8d1ea1873857d31d9a9265a39b69e408f42edf69c81417a1f76b03ce7e45d
   languageName: node
   linkType: hard
 
@@ -7855,10 +7855,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-promise@npm:^2.1.0":
-  version: 2.2.2
-  resolution: "is-promise@npm:2.2.2"
-  checksum: 18bf7d1c59953e0ad82a1ed963fb3dc0d135c8f299a14f89a17af312fc918373136e56028e8831700e1933519630cc2fd4179a777030330fde20d34e96f40c78
+"is-promise@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "is-promise@npm:4.0.0"
+  checksum: 0b46517ad47b00b6358fd6553c83ec1f6ba9acd7ffb3d30a0bf519c5c69e7147c132430452351b8a9fc198f8dd6c4f76f8e6f5a7f100f8c77d57d9e0f4261a8a
   languageName: node
   linkType: hard
 
@@ -9876,10 +9876,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-to-regexp@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "path-to-regexp@npm:3.2.0"
-  checksum: c3d35cda3b26d9e604d789b9a1764bb9845f53ca8009d5809356b4677a3c064b0f01117a05a5b4b77bafd5ae002a82592e3f3495e885c22961f8b1dab8bd6ae7
+"path-to-regexp@npm:^6.2.2":
+  version: 6.2.2
+  resolution: "path-to-regexp@npm:6.2.2"
+  checksum: b7b0005c36f5099f9ed1fb20a820d2e4ed1297ffe683ea1d678f5e976eb9544f01debb281369dabdc26da82e6453901bf71acf2c7ed14b9243536c2a45286c33
   languageName: node
   linkType: hard
 
@@ -11505,7 +11505,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sage@workspace:."
   dependencies:
-    "@barba/core": ^2.9.7
+    "@barba/core": ^2.10.3
     "@juggle/resize-observer": ^3.4.0
     "@popperjs/core": ^2.11.8
     "@roots/bud": 6.20.0
@@ -11515,7 +11515,7 @@ __metadata:
     "@roots/bud-stylelint": ^6.20.0
     "@roots/eslint-config": ^6.20.0
     "@roots/sage": 6.20.0
-    "@studio-freight/lenis": ^1.0.34
+    "@studio-freight/lenis": ^1.0.42
     bootstrap: ^5.3.2
     gsap: ^3.12.5
   languageName: unknown
