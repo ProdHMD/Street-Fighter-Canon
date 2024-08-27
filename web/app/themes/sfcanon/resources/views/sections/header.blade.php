@@ -1,5 +1,5 @@
 <header class="banner d-flex flex-wrap justify-content-center align-items-center" id="header">
-  <a class="brand align-items-center me-md-auto" href="{{ home_url('/') }}">
+  <a class="brand align-items-center me-auto" href="{{ home_url('/') }}">
     {!! $siteName !!}
   </a>
 

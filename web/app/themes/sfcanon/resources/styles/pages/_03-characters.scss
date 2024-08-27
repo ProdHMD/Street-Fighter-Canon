@@ -1,6 +1,60 @@
 /** Characters page */
 .main {
     &#characters {
-        // Stuff goes here
+        #main-content {
+            display: block;
+            padding-top: 6.25rem;
+
+            #top-content {
+                min-width: 100%;
+                
+                .title {
+                    font-size: 7.875rem;
+                }
+
+                .list-group {
+                    .button {
+                        margin-right: 1rem;
+
+                        a {
+                            background-image: url('../../images/svgs/sf-border.svg');
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            padding: 1rem 4.65rem;
+                            text-decoration: none;
+                            font-weight: 400;
+                            transition: all .125s ease-in-out;
+        
+                            &:hover {
+                                background-image: url('../../images/svgs/sf-fill.svg');
+                                color: $black;
+                                text-decoration: none;
+                                transition: all .125s ease-in-out;
+                            }
+                        }
+
+                        &:nth-child(1) {
+                            a {
+                                padding: 1rem 4.65rem;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            a {
+                                padding: 1rem 4.05rem;
+                            }
+                        }
+
+                        &:nth-child(3) {
+                            margin-right: 0;
+
+                            a {
+                                padding: 1rem 7.125rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

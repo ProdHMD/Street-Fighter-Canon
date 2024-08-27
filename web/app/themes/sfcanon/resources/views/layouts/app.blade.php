@@ -1,5 +1,6 @@
-<?php
+@php
   global $post;
+
   if ($post) {
     $post_id = $post->ID;
 
@@ -12,7 +13,7 @@
     $post_id = '';
     $post_slug = '';
   }
-?>
+@endphp
 
 <!doctype html>
 <html @php(language_attributes())>
@@ -33,7 +34,7 @@
 
       @include('sections.header')
 
-      <main id="<?php echo $post_slug; ?>" class="main">
+      <main id="{!! $post_slug !!}" class="main">
         @yield('content')
       </main>
 
