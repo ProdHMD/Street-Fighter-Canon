@@ -1,6 +1,7 @@
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import Draggable from 'gsap/Draggable';
 //import { ResizeObserver } from '@juggle/resize-observer';
 
 export const lenisinit = async (err) => {
@@ -37,10 +38,21 @@ export const lenisinit = async (err) => {
 
   const timeline = document.getElementById('main-content')
   let entry_items = gsap.utils.toArray('.entry-item')
+  
+  const thumb = document.querySelector('.scroll-thumb')
+  let scrollTween = gsap.to(thumb, {
+    x: 64,
+    ease: 'none',
+    scrollTrigger: {
+      start: 0,
+      end: 'max',
+      scrub: true,
+    },
+  })
 
   function timelineJS() {
     gsap.to(entry_items, {
-      xPercent: -117.25 * (entry_items.length - 1),
+      xPercent: -117.1 * (entry_items.length - 1),
       ease: 'sine.inOut',
       scrollTrigger: {
         trigger: timeline,
@@ -50,6 +62,25 @@ export const lenisinit = async (err) => {
         end: '+=' + timeline.offsetWidth,
       },
     })
+
+    Draggable.create('.scroll-thumb', {
+      type: 'x',
+      bounds: '#scroll-bar',
+      inertia: true,
+      onPress() {
+        scrollTween.scrollTrigger.disable(false)
+      },
+      onDrag() {
+        let progress = gsap.utils.normalize(this.minX, this.maxX, this.x)
+        let to = lenis.scrollTrigger.end * progress
+        lenis.scrollTo(to, true)
+      },
+      onRelease() {
+        let progress = gsap.utils.normalize(this.minX, this.maxX, this.x)
+        scrollTween.scrollTrigger.enable()
+        scrollTween.progress(progress)
+      },
+    })[0]
   }
   if ($('main').is('#timeline')) {
     timelineJS()

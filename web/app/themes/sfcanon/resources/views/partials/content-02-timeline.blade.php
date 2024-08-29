@@ -58,7 +58,9 @@
       </div>
 
       <div class="row" id="bottom-content">
-        <div class="col-xl-4 offset-xl-4" id="scroll-bar"></div>
+        <div class="col-xl-4 offset-xl-4" id="scroll-bar">
+          <div class="scroll-thumb"></div>
+        </div>
       </div>
     </div>
   </div>

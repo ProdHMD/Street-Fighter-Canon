@@ -56,7 +56,7 @@ export const bg = async (err) => {
     // Run the scripts on the canvas
     $('.canvas').height(viewportHeight).width(viewportWidth);
     $('.canvas').children('.background-media').height(videoHeight).width(videoWidth);
-    $('.canvas-color').height(videoHeight).width(videoWidth);
+    $('.canvas-color').height(viewportHeight).width(viewportWidth);
   }
 };
 
