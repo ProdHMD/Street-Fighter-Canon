@@ -4,7 +4,7 @@
   if ($post) {
     $post_id = $post->ID;
 
-    if (is_singular('characters')) {
+    if (is_singular('character')) {
       $post_slug = 'bio';
     } else {
       $post_slug = $post->post_name; 

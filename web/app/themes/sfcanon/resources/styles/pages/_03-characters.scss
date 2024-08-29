@@ -1,5 +1,6 @@
-/** Characters page */
+/** Characters pages */
 .main {
+    /** Characters page */
     &#characters {
         #main-content {
             display: block;
@@ -54,6 +55,110 @@
                         }
                     }
                 }
+            }
+
+            #bottom-content {
+                #character-group {
+                    padding: 0 calc(var(--bs-gutter-x) * .5);
+
+                    .chara {
+                        min-height: 26rem;
+                        position: relative;
+                        clip-path: url('../../images/svgs/sf-chara-border.svg#clip-path');
+
+                        a {
+                            position: absolute;
+                            inset: 0;
+                            background: no-repeat 20% top;
+                            background-size: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /** Single character page */
+    &#bio {
+        #main-content {
+            display: block;
+            padding-top: 6.25rem;
+            position: relative;
+            z-index: 1;
+
+            #top-content {
+                #details {
+                    h1 {
+                        font-size: 9.75rem;
+                        line-height: 0.7054;
+                        margin-bottom: 1rem;
+
+                        @include media-breakpoint-down(xl) {
+                            font-size: 7rem;
+                        }
+
+                        @include media-breakpoint-down(md) {
+                            font-size: 5.375rem;
+                        }
+                    }
+
+                    #chara-info {
+                        font-size: 1rem;
+                        line-height: normal;
+                    }
+
+                    #games {
+                        .game {
+                            &:first-child {
+                                padding-left: calc(var(--bs-gutter-x) * .5) !important;
+                            }
+
+                            &:last-child {
+                                padding-right: calc(var(--bs-gutter-x) * .5) !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #bottom-content {
+                #biography {
+                    .title {
+                        font-size: 5rem;
+                        line-height: normal
+                    }
+
+                    .content {
+                        font-size: 1rem;
+                        line-height: normal;
+                    }
+
+                    .fight {
+                        .title {
+                            font-size: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        /** Background image */
+        #biography-image {
+            z-index: 0;
+
+            svg {
+                position: relative;
+
+                #Image_1 {
+                    opacity: 1;
+                    mix-blend-mode: overlay;
+                }
+            }
+        }
+
+        .single-character & {
+            + #canvas {
+                display: none;
             }
         }
     }

@@ -1,6 +1,28 @@
 /** About page */
 .main {
     &#about {
-        // Stuff goes here
+        #main-content {
+            display: block;
+            padding-top: 6.25rem;
+
+            #top-content {
+                min-width: 100%;
+                
+                .title {
+                    font-size: 7.875rem;
+                    margin-bottom: 0;
+                }
+
+                #credits-section {
+                    font-size: 1.5rem;
+                    line-height: normal;
+                }
+
+                #sources-section {
+                    font-size: 1.5rem;
+                    line-height: normal;
+                }
+            }
+        }
     }
 }
