@@ -1,9 +1,9 @@
 <div class="container-fluid ps-0 pe-0" id="main-content">
-  <div class="row">
+  <div class="row" id="entry-row">
     <div class="col-xl-12">
       <div class="row" id="top-content">
-        <div class="col-xl-11" id="entry-main">
-          <div class="container-fluid ps-0 pe-0 d-flex align-items-center">
+        <div class="col-xl-12" id="entry-main">
+          <div class="container-fluid ps-0 pe-0 d-flex align-items-center" id="entry-container">
             @php
               $args = array(
                 'post_type' => 'entry',
@@ -15,7 +15,7 @@
             @if ($query->have_posts())
               @while ($query->have_posts()) @php($query->the_post())
                 @php($entry_slug = str_replace(' ', '-', strtolower(get_the_title())))
-                <div class="entry row align-items-center" id="entry-year-{!! $entry_slug !!}">
+                <div class="entry entry-item row align-items-center" id="entry-year-{!! $entry_slug !!}">
                   <div class="col-xl-8" id="entry-text-main">
                     <h2 class="entry-title">{!! get_the_title() !!}</h2>
                     <div class="entry-text">@php(the_content())</div>

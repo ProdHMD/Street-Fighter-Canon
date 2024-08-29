@@ -4,13 +4,21 @@
         #main-content {
             padding-top: 6.25rem;
 
+            #entry-row {
+                width: 105%;
+            }
+
             #top-content {
+                position: relative;
+
                 #entry-main {
+                    padding-right: calc(8.3333% + 3rem);
+
                     .entry {
-                        min-width: fit-content;
+                        min-width: 100%;
 
                         &:not(:first-child) {
-                            margin-left: calc(8.3333% + 6.25rem);
+                            margin-left: calc(8.3333% + 6.25rem + 3rem);
                         }
 
                         #entry-text-main {
@@ -35,6 +43,9 @@
                 }
 
                 #game-list {
+                    position: absolute;
+                    right: 0;
+
                     .game {
                         padding-left: 2rem;
                         padding-right: 2rem;
@@ -43,7 +54,10 @@
             }
 
             #bottom-content {
-                margin-top: -.75rem;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 4.6875rem;
                 
                 #scroll-bar {
                     padding: .25rem;

@@ -4667,9 +4667,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001286, caniuse-lite@npm:^1.0.30001400, caniuse-lite@npm:^1.0.30001517, caniuse-lite@npm:^1.0.30001538, caniuse-lite@npm:^1.0.30001565":
-  version: 1.0.30001651
-  resolution: "caniuse-lite@npm:1.0.30001651"
-  checksum: c31a5a01288e70cdbbfb5cd94af3df02f295791673173b8ce6d6a16db4394a6999197d44190be5a6ff06b8c2c7d2047e94dfd5e5eb4c103ab000fca2d370afc7
+  version: 1.0.30001653
+  resolution: "caniuse-lite@npm:1.0.30001653"
+  checksum: 289cf06c26a46f3e6460ccd5feffa788ab0ab35d306898c48120c65cfb11959bfa560e9f739393769b4fd01150c69b0747ad3ad5ec3abf3dfafd66df3c59254e
   languageName: node
   linkType: hard
 
@@ -5524,6 +5524,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"desandro-matches-selector@npm:^2.0.0":
+  version: 2.0.2
+  resolution: "desandro-matches-selector@npm:2.0.2"
+  checksum: 30979e6b45d7720d259d4db11ec026fcbee242deee5ec0944c265d7e386a7358ab29f7417cbc3631830d0dbe6e827940dee31f789ed865dba22880d209fc9f8e
+  languageName: node
+  linkType: hard
+
 "destroy@npm:1.2.0":
   version: 1.2.0
   resolution: "destroy@npm:1.2.0"
@@ -6249,6 +6256,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ev-emitter@npm:^1.0.0":
+  version: 1.1.1
+  resolution: "ev-emitter@npm:1.1.1"
+  checksum: 3dd78a7620701ef8095794f611dd251bdd9023badf322b3d6fa5e10a660c50e83eec5ee5bbc7654682635cf7b8858c94e2c77e1d10bdc188a2b0593436403476
+  languageName: node
+  linkType: hard
+
 "eventemitter3@npm:^4.0.0":
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
@@ -6562,6 +6576,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fizzy-ui-utils@npm:^2.0.0, fizzy-ui-utils@npm:^2.0.4":
+  version: 2.0.7
+  resolution: "fizzy-ui-utils@npm:2.0.7"
+  dependencies:
+    desandro-matches-selector: ^2.0.0
+  checksum: 001e54effa22c4f62728b90a25e8eb5477057ab53d0184e1c3231bbdfc7c34e278418fbcaf7d63c75ede823d82e61245e668ce8cba90e1c5699de960188c654f
+  languageName: node
+  linkType: hard
+
 "flat-cache@npm:^3.0.4, flat-cache@npm:^3.2.0":
   version: 3.2.0
   resolution: "flat-cache@npm:3.2.0"
@@ -6788,6 +6811,13 @@ __metadata:
   version: 7.0.0
   resolution: "get-port@npm:7.0.0"
   checksum: e9087f62d086bbb70f20c0a208e7cac552679c1426e29e0607eb1b8907a5cc4509337d5971b7f635385cd2a773a14cd21b7d9c3254a2eb5ebeaf5f8fde19fb07
+  languageName: node
+  linkType: hard
+
+"get-size@npm:^2.0.0, get-size@npm:^2.0.2":
+  version: 2.0.3
+  resolution: "get-size@npm:2.0.3"
+  checksum: 18d5a5fdb3f541db8b1e6ad46a5411d4bb7da3061d2ef7e544db3bbce7a13543f05c91fd40c7f68b4bc4bc035c160fed23c45514cde7d5fb18de1cce10208b19
   languageName: node
   linkType: hard
 
@@ -8001,6 +8031,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"isotope-layout@npm:^3.0.6":
+  version: 3.0.6
+  resolution: "isotope-layout@npm:3.0.6"
+  dependencies:
+    desandro-matches-selector: ^2.0.0
+    fizzy-ui-utils: ^2.0.4
+    get-size: ^2.0.0
+    masonry-layout: ^4.1.0
+    outlayer: ^2.1.0
+  checksum: e0eff5d1ce4fd308fd2b3496a5a10aa99025bef4534f1d090d82289d51974177775a5581d74ed5ca05b80752f735bb5ee6b0c754f52f08747579f1e6dd18d467
+  languageName: node
+  linkType: hard
+
 "iterator.prototype@npm:^1.1.2":
   version: 1.1.2
   resolution: "iterator.prototype@npm:1.1.2"
@@ -8638,6 +8681,16 @@ __metadata:
   version: 4.3.0
   resolution: "map-obj@npm:4.3.0"
   checksum: fbc554934d1a27a1910e842bc87b177b1a556609dd803747c85ece420692380827c6ae94a95cce4407c054fa0964be3bf8226f7f2cb2e9eeee432c7c1985684e
+  languageName: node
+  linkType: hard
+
+"masonry-layout@npm:^4.1.0":
+  version: 4.2.2
+  resolution: "masonry-layout@npm:4.2.2"
+  dependencies:
+    get-size: ^2.0.2
+    outlayer: ^2.1.0
+  checksum: b947029b8fdfb384d17d7749d80a4f00f88d885acea04d77e1fefd36827cc2a345fd40d9ccddf720ed9323e133d8ea498125eece91d2c8517f69fd4e9e1bbdf4
   languageName: node
   linkType: hard
 
@@ -9653,6 +9706,17 @@ __metadata:
     prelude-ls: ^1.2.1
     type-check: ^0.4.0
   checksum: 09281999441f2fe9c33a5eeab76700795365a061563d66b098923eb719251a42bdbe432790d35064d0816ead9296dbeb1ad51a733edf4167c96bd5d0882e428a
+  languageName: node
+  linkType: hard
+
+"outlayer@npm:^2.1.0":
+  version: 2.1.1
+  resolution: "outlayer@npm:2.1.1"
+  dependencies:
+    ev-emitter: ^1.0.0
+    fizzy-ui-utils: ^2.0.0
+    get-size: ^2.0.2
+  checksum: a8b69d07bad6b498ea1956f89a4bae6d38414d81a5feeae6af06cd8206a1bf47db82f664dc3ccd13b8d2c5886a6cded4a4642d0fafcbbd80f68873b7eb9f4153
   languageName: node
   linkType: hard
 
@@ -11518,6 +11582,7 @@ __metadata:
     "@studio-freight/lenis": ^1.0.42
     bootstrap: ^5.3.2
     gsap: ^3.12.5
+    isotope-layout: ^3.0.6
   languageName: unknown
   linkType: soft
 

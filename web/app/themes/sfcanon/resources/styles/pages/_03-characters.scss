@@ -17,10 +17,11 @@
                     .button {
                         margin-right: 1rem;
 
-                        a {
+                        button {
                             background-image: url('../../images/svgs/sf-border.svg');
                             background-size: cover;
                             background-repeat: no-repeat;
+                            color: $white;
                             padding: 1rem 4.65rem;
                             text-decoration: none;
                             font-weight: 400;
@@ -35,13 +36,13 @@
                         }
 
                         &:nth-child(1) {
-                            a {
+                            button {
                                 padding: 1rem 4.65rem;
                             }
                         }
 
                         &:nth-child(2) {
-                            a {
+                            button {
                                 padding: 1rem 4.05rem;
                             }
                         }
@@ -49,7 +50,7 @@
                         &:nth-child(3) {
                             margin-right: 0;
 
-                            a {
+                            button {
                                 padding: 1rem 7.125rem;
                             }
                         }

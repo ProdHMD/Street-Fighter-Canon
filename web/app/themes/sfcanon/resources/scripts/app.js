@@ -5,6 +5,7 @@ import 'bootstrap';
 
 // Import custom modules
 import { lenisinit } from './modules/common/lenis.js';
+import { isotope } from './modules/common/isotope.js';
 import { bg } from './modules/common/bg.js';
 //import { barbainit } from './modules/common/barba.js';
 
@@ -17,6 +18,9 @@ domReady(async () => {
 
   // Init lenisJS
   lenisinit();
+
+  // Init isotopeJS
+  isotope();
 
   // Init barbaInitJS
   //barbainit();

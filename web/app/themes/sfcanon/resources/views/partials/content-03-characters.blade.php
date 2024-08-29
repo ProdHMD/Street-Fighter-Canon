@@ -3,10 +3,10 @@
     <div class="col-xl-12 d-flex flex-wrap justify-content-between align-items-center">
       <h2 class="title ms-0 mb-0 me-auto">Choose Your Fighter</h2>
 
-      <ul class="list-unstyled list-group list-group-horizontal">
-        <li class="button"><a href="#">Canon Debut</a></li>
-        <li class="button"><a href="#">Realtime Debut</a></li>
-        <li class="button"><a href="#">A-Z</a></li>
+      <ul class="list-unstyled list-group list-group-horizontal btn-group">
+        <li class="button"><button class="btn" data-sort-by="canon">Canon Debut</button></li>
+        <li class="button"><button class="btn" data-sort-by="game">Realtime Debut</button></li>
+        <li class="button"><button class="btn" data-sort-by="name">A-Z</button></li>
       </ul>
     </div>
   </div>
@@ -25,7 +25,7 @@
         @if ($query->have_posts())
           @while ($query->have_posts()) @php($query->the_post())
             @php($chara_slug = str_replace(' ', '-', strtolower(get_the_title())))
-            <div class="col-xl-2 chara" id="chara-{!! $chara_slug !!}">
+            <div class="col-xl-2 chara transition" id="chara-{!! $chara_slug !!}" data-name="{!! get_the_title() !!}" data-canon-debut="street-fighter-alpha-2" data-game-debut="street-fighter-ii">
               <a href="{!! get_permalink() !!}">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 175 250">
                   <defs>
