@@ -16,8 +16,8 @@ export const bg = async (err) => {
     var pageId = $('main').attr('id');
 
     // Pass thru the show class to the correpsonding canvas element
-    $('#canvas').children().not('#'+pageId).removeClass('show');
-    $('#canvas').children('#'+pageId).addClass('show');
+    $('#canvas').children().not('#'+pageId+'-video-container').removeClass('show');
+    $('#canvas').children('#'+pageId+'-video-container').addClass('show');
 
     // Play video if show class is active
     $('.canvas').each(function() {
@@ -57,6 +57,39 @@ export const bg = async (err) => {
     $('.canvas').height(viewportHeight).width(viewportWidth);
     $('.canvas').children('.background-media').height(videoHeight).width(videoWidth);
     $('.canvas-color').height(viewportHeight).width(viewportWidth);
+    $('canvas').height(videoHeight).width(videoWidth);
+
+    // Run the drawCanvas function
+    drawCanvas();
+  }
+
+  /** Draw video on canvas */
+  function drawCanvas() {
+    const canvas = document.querySelector('#canvas canvas');
+    const video = document.querySelector('#canvas .canvas.show .background-media');
+    
+    function drawImage() {
+      canvas.getContext('2d', { alpha: false }).drawImage(video, 0, 0, 1280, 720);
+    }
+
+    var canvasInterval = window.setInterval(() => {
+      drawImage(video);
+    }, 1000 / 60);
+
+    video.onpause = function() {
+      clearInterval(canvasInterval);
+    }
+
+    video.onended = function() {
+      clearInterval(canvasInterval);
+    }
+
+    video.onplay = function() {
+      clearInterval(canvasInterval);
+      canvasInterval = window.setInterval(() => {
+        drawImage(video);
+      }, 1000 / 60);
+    }
   }
 };
 

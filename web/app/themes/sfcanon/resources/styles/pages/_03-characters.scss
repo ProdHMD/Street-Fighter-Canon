@@ -72,6 +72,16 @@
                             inset: 0;
                             background: no-repeat 20% top;
                             background-size: cover;
+
+                            svg {
+                                filter: grayscale(1);
+                                transition: all .2s ease-in-out;
+
+                                &:hover {
+                                    filter: grayscale(0);
+                                    transition: all .2s ease-in-out;
+                                }
+                            }
                         }
                     }
                 }

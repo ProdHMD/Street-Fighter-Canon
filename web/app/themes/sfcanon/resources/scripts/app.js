@@ -7,6 +7,8 @@ import 'bootstrap';
 import { lenisinit } from './modules/common/lenis.js';
 import { isotope } from './modules/common/isotope.js';
 import { bg } from './modules/common/bg.js';
+import { home } from './modules/pages/home.js';
+import { timeline } from './modules/pages/timeline.js';
 //import { barbainit } from './modules/common/barba.js';
 
 /**
@@ -17,10 +19,22 @@ domReady(async () => {
   bg();
 
   // Init lenisJS
-  lenisinit();
+  if (!document.body.classList.contains('timeline')) {
+    lenisinit();
+  }
 
   // Init isotopeJS
   isotope();
+
+  // Init homeJS
+  if (document.body.classList.contains('home')) {
+    home();
+  }
+
+  // Init timelineJS
+  if (document.body.classList.contains('timeline')) {
+    timeline();
+  }
 
   // Init barbaInitJS
   //barbainit();
