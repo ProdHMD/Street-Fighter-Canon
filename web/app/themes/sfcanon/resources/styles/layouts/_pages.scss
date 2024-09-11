@@ -202,7 +202,6 @@ html {
             opacity: 0;
             overflow: hidden;
             mix-blend-mode: overlay;
-            transition: opacity 0.2s ease-in-out;
 
             .background-media {
                 position: absolute;
@@ -240,7 +239,7 @@ html {
             top: 0;
             z-index: 0;
             mix-blend-mode: overlay;
-            opacity: 0.5;
+            opacity: 0.75;
         }
     }
 }
