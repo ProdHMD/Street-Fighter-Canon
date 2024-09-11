@@ -45,7 +45,7 @@ export const barbainit = async (err) => {
   /** Initialize barbaJS scripts */
   barba.init({
     // Make sure the sync is true
-    sync: false,
+    sync: true,
 
     // Turn on and off debug mode
     debug: false,
