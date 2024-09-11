@@ -52,6 +52,10 @@
                     line-height: normal;
                 }
             }
+
+            .home & {
+                display: none;
+            }
         }
     }
 }

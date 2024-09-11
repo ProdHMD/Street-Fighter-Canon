@@ -1,4 +1,4 @@
-<div class="container-fluid ps-0 pe-0" id="main-content">
+<div class="container-fluid" id="main-content">
   <div class="row" id="top-content">
     <div class="col-xl-5" id="credits-section">
       <h2 class="title">Credits</h2>

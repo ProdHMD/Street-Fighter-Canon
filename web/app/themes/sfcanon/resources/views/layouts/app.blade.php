@@ -27,14 +27,14 @@
   <body @php(body_class())>
     @php(wp_body_open())
 
-    <div id="app">
+    <div id="app" data-barba="wrapper">
       <a class="sr-only sr-only-focusable visually-hidden" href="#content">
         {{ __('Skip to content') }}
       </a>
 
       @include('sections.header')
 
-      <main id="{!! $post_slug !!}" class="main">
+      <main id="{!! $post_slug !!}" class="main" data-barba="container" data-barba-namespace="{!! $post_slug !!}">
         @yield('content')
       </main>
 

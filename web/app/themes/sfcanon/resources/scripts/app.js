@@ -9,22 +9,21 @@ import { isotope } from './modules/common/isotope.js';
 import { bg } from './modules/common/bg.js';
 import { home } from './modules/pages/home.js';
 import { timeline } from './modules/pages/timeline.js';
-//import { barbainit } from './modules/common/barba.js';
+import { barbainit } from './modules/common/barba.js';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
   // Init bgJS
-  bg();
+  if (!document.body.classList.contains('single-character')) {
+    bg();
+  }
 
   // Init lenisJS
   if (!document.body.classList.contains('timeline')) {
     lenisinit();
   }
-
-  // Init isotopeJS
-  isotope();
 
   // Init homeJS
   if (document.body.classList.contains('home')) {
@@ -36,8 +35,13 @@ domReady(async () => {
     timeline();
   }
 
+  // Init isotopeJS
+  if (document.body.classList.contains('characters')) {
+    isotope();
+  }
+
   // Init barbaInitJS
-  //barbainit();
+  barbainit();
 });
 
 /**

@@ -1,4 +1,4 @@
-<article @php(post_class('container-fluid ps-0 pe-0')) id="main-content">
+<article @php(post_class('container-fluid')) id="main-content">
   <div class="row">
     <div class="col-xl-8 mt-5" id="biography-content">
       <header class="container-fluid ps-0 pe-0" id="top-content">

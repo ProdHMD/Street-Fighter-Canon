@@ -23,6 +23,6 @@ html {
     }
 
     &.lenis-stopped {
-        overflow: hidden;
+        overflow: hidden !important;
     }
 }

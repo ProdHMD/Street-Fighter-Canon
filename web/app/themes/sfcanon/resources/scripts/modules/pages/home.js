@@ -3,66 +3,82 @@ export const home = async (err) => {
     console.error(err);
   }
 
-  // Get references to elements
-  const videoCanvas = document.getElementById('video-canvas');
-  const context = videoCanvas.getContext('2d');
-  const videos = {
-    video1: document.getElementById('home-video'),
-    video2: document.getElementById('timeline-video'),
-    video3: document.getElementById('characters-video'),
-    video4: document.getElementById('about-video'),
-  };
+  // Set canvas and video constants
+  const canvas = document.getElementById('video-canvas');
+  const ctx = canvas.getContext('2d');
+  const videos = [
+    document.getElementById('home-video'),
+    document.getElementById('timeline-video'),
+    document.getElementById('characters-video'),
+    document.getElementById('about-video'),
+  ];
 
-  // Default video source
-  let currentVideoId = 'video1';
-  let currentVideoElement = videos[currentVideoId];
-
-  // Draw video frame on canvas
-  function drawVideoFrame() {
-    if (currentVideoElement && !currentVideoElement.paused) {
-      context.drawImage(currentVideoElement, 0, 0, videoCanvas.width, videoCanvas.height);
+  // Video indices
+  const initialVideoIndex = 0;
+  const hoverVideoIndices = [1, 2, 3];
+  
+  // Set initial video and fade parameters
+  let currentVideoIndex = initialVideoIndex;
+  let nextVideoIndex = initialVideoIndex;
+  let fadeDuration = 500; // Duration in milliseconds
+  let fadeStartTime = null;
+  let hoverTimeout = null;
+  
+  // Function to set video and start fade
+  function startFade(newVideoIndex) {
+    if (newVideoIndex !== currentVideoIndex) {
+      nextVideoIndex = newVideoIndex;
+      fadeStartTime = Date.now();
+      videos[currentVideoIndex].pause();
+      videos[nextVideoIndex].play();
     }
-    requestAnimationFrame(drawVideoFrame);
+  }
+  
+  // Drawing and fading logic
+  function draw() {
+    const now = Date.now();
+    const elapsedTime = fadeStartTime ? now - fadeStartTime : 0;
+    const fadeProgress = Math.min(elapsedTime / fadeDuration, 1);
+
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw current video with fading effect
+    ctx.globalAlpha = 1 - fadeProgress;
+    ctx.drawImage(videos[currentVideoIndex], 0, 0, canvas.width, canvas.height);
+
+    // Draw next video with fading effect
+    ctx.globalAlpha = fadeProgress;
+    ctx.drawImage(videos[nextVideoIndex], 0, 0, canvas.width, canvas.height);
+
+    if (fadeProgress >= 1 && currentVideoIndex !== nextVideoIndex) {
+      currentVideoIndex = nextVideoIndex;
+    }
+
+    requestAnimationFrame(draw);
   }
 
-  // Start drawing the initial video
-  drawVideoFrame();
-
-  // Function to change video source
-  function fadeToVideo(newVideoId) {
-    if (currentVideoId === newVideoId) return;
-
-    // Get current and new video elements
-    const oldVideo = videos[currentVideoId];
-    const newVideo = videos[newVideoId];
-
-    // Begin fade out of the current video
-    oldVideo.classList.remove('opIn');
-    setTimeout(() => {
-      oldVideo.pause();
-      //oldVideo.currentTime = 0;
-      oldVideo.classList.add('opFade');
-    }, 1000 / 60); // Match fade duration
-
-    // Begin fade in of the new video
-    newVideo.classList.remove('opFade');
-    newVideo.classList.add('opIn');
-    newVideo.play();
-
-    // Update current video reference
-    currentVideoId = newVideoId;
-    currentVideoElement = newVideo;
+  function handleHover(videoIndex) {
+    startFade(videoIndex);
+    if (hoverTimeout) clearTimeout(hoverTimeout);
   }
 
-  // Attach hover events to links
-  document.getElementById('timeline').addEventListener('mouseover', () => fadeToVideo('video2'));
-  document.getElementById('characters').addEventListener('mouseover', () => fadeToVideo('video3'));
-  document.getElementById('about').addEventListener('mouseover', () => fadeToVideo('video4'));
+  function handleMouseOut() {
+    hoverTimeout = setTimeout(() => startFade(initialVideoIndex), 100); // Delay to avoid rapid switching
+  }
 
-  // Change video back to default if no link is hovered
-  document.querySelectorAll('#home h2 a').forEach(link => {
-    link.addEventListener('mouseout', () => fadeToVideo('video1'));
+  // Link hover event handlers
+  document.getElementById('timeline').addEventListener('mouseover', () => handleHover(hoverVideoIndices[0]));
+  document.getElementById('characters').addEventListener('mouseover', () => handleHover(hoverVideoIndices[1]));
+  document.getElementById('about').addEventListener('mouseover', () => handleHover(hoverVideoIndices[2]));
+
+  document.querySelectorAll('#home.main h2 a').forEach(link => {
+    link.addEventListener('mouseout', handleMouseOut);
   });
+
+  // Start with the first video
+  videos[initialVideoIndex].play();
+  requestAnimationFrame(draw);
 };
 
 import.meta.webpackHot?.accept(home);

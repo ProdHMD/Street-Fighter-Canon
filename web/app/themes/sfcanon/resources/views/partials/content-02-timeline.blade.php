@@ -1,4 +1,4 @@
-<div class="container-fluid ps-0 pe-0" id="main-content">
+<div class="container-fluid" id="main-content">
   <div class="row" id="entry-row">
     <div class="carousel-scroll-cover active"></div>
     <div class="col-xl-12 carousel" id="timeline-carousel">

@@ -20,6 +20,7 @@ html {
 /** App container */
 #app {
     position: relative;
+    overflow: hidden;
 
     /** Scroll container */
     > [data-scroll-container] {
@@ -50,7 +51,6 @@ html {
     /** Content container */
     .main {
         position: relative;
-        padding: 0 6.25rem;
         color: $white;
         font-family: $sf_pro_text;
         z-index: 1;
@@ -109,6 +109,7 @@ html {
             align-items: flex-end;
             min-height: calc(100vh - 6.25rem);
             margin-bottom: 6.25rem;
+            padding: 6.25rem 6.25rem 0;
 
             .logged-in & {
                 min-height: calc(100vh - (6.25rem + 2rem));
@@ -177,6 +178,8 @@ html {
             align-items: flex-start;
             min-height: 100vh;
             color: $white;
+            background-color: $black;
+            padding: 6.25rem 6.25rem 0;
 
             .logged-in & {
                 min-height: calc(100vh - 2rem);
@@ -208,16 +211,6 @@ html {
                 width: 100%;
                 height: 100%;
                 transform: translate(-50%,-50%);
-
-                &.opFade {
-                    opacity: 0;
-                    transition: all 1s ease-in-out;
-                }
-
-                &.opIn {
-                    opacity: 1;
-                    transition: all 1s ease-in-out;
-                }
             }
 
             &#home,

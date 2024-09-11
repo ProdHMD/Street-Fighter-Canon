@@ -3,47 +3,39 @@ export const bg = async (err) => {
     console.error(err);
   }
 
-  /** Run onPage function */
-  $('#canvas #home.canvas').removeClass('show');
-  $('#canvas #timeline.canvas').removeClass('show');
-  $('#canvas #characters.canvas').removeClass('show');
-  $('#canvas #about.canvas').removeClass('show');
-  onPage();
+  // Function to update video canvas depending on page ID
+  const canvas = document.getElementById('video-canvas');
+  const ctx = canvas.getContext('2d');
+  let currentVideo = null;
 
-  /** Turn on background if on certain pages */
+  // Function that gets the page ID and passes it along to add 'show' class
   function onPage() {
     // Get id of main element
     var pageId = $('main').attr('id');
 
-    // Pass thru the show class to the correpsonding canvas element
-    $('#canvas').children().not('#'+pageId+'-video-container').removeClass('show');
-    $('#canvas').children('#'+pageId+'-video-container').addClass('show');
+    // Pass thru the 'show' class to the correpsonding canvas element
+    $('#canvas').children().not('#'+pageId+'-video-container').children().removeClass('show');
+    $('#canvas').children('#'+pageId+'-video-container').children().addClass('show');
 
-    // Play video if show class is active
-    $('.canvas').each(function() {
-      if ($(this).hasClass('show')) {
-        $(this).siblings().children()[0].pause();
-        $(this).children()[0].play();
-      }
-    });
-
-    // Run set canvas
+    // Run setCanvas function
     setCanvas();
+
+    // Run setCanvas function on resize
     $(window).on('resize', function() {
       setCanvas();
     });
   }
-
-  /** Set height and width of canvas */
+  
+  // Function that sets the height and width of the canvas
   function setCanvas() {
     // Set viewport variables
-    var viewportHeight = $(window).innerHeight();
-    var viewportWidth = $(window).innerWidth();
-
+    let viewportHeight = window.innerHeight;
+    let viewportWidth = window.innerWidth;
+  
     // Set videoHeight variables
-    var videoHeight = Math.round(viewportWidth / 16 * 9);
-    var videoWidth = viewportWidth;
-
+    let videoHeight = Math.round(viewportWidth / 16 * 9);
+    let videoWidth = viewportWidth;
+  
     // Set videoHeight and videoWidth if videoHeight <> viewportHeight
     if (videoHeight < viewportHeight) {
       videoHeight = viewportHeight;
@@ -52,45 +44,65 @@ export const bg = async (err) => {
       videoHeight = Math.round(viewportWidth / 16 * 9);
       videoWidth = viewportWidth;
     }
-
-    // Run the scripts on the canvas
+  
+    // Set canvas elements width and height
     $('.canvas').height(viewportHeight).width(viewportWidth);
     $('.canvas').children('.background-media').height(videoHeight).width(videoWidth);
     $('.canvas-color').height(viewportHeight).width(viewportWidth);
     $('canvas').height(videoHeight).width(videoWidth);
-
-    // Run the drawCanvas function
-    drawCanvas();
   }
 
-  /** Draw video on canvas */
-  function drawCanvas() {
-    const canvas = document.querySelector('#canvas canvas');
-    const video = document.querySelector('#canvas .canvas.show .background-media');
-    
-    function drawImage() {
-      canvas.getContext('2d', { alpha: false }).drawImage(video, 0, 0, 1280, 720);
+  // Remove 'show' class from all video elements
+  $('#canvas #home.canvas').children().removeClass('show');
+  $('#canvas #timeline.canvas').children().removeClass('show');
+  $('#canvas #characters.canvas').children().removeClass('show');
+  $('#canvas #about.canvas').children().removeClass('show');
+
+  // Run the onPage function
+  onPage();
+
+  function playVideoInCanvas(videoElement) {
+    const video = videoElement;
+  
+    if (currentVideo !== video) {
+      if (currentVideo) {
+        currentVideo.pause();
+      }
+  
+      video.play();
+      currentVideo = video;
     }
-
-    var canvasInterval = window.setInterval(() => {
-      drawImage(video);
-    }, 1000 / 60);
-
-    video.onpause = function() {
-      clearInterval(canvasInterval);
+  
+    function drawFrame() {
+      if (!video.paused && !video.ended) {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        requestAnimationFrame(drawFrame);
+      }
     }
-
-    video.onended = function() {
-      clearInterval(canvasInterval);
-    }
-
-    video.onplay = function() {
-      clearInterval(canvasInterval);
-      canvasInterval = window.setInterval(() => {
-        drawImage(video);
-      }, 1000 / 60);
+  
+    drawFrame();
+  }
+  
+  function updateVideo() {
+    const videos = document.querySelectorAll('.background-media');
+    let videoToShow = null;
+  
+    videos.forEach(video => {
+      if (video.classList.contains('show')) {
+        videoToShow = video;
+      }
+    });
+  
+    if (videoToShow) {
+      playVideoInCanvas(videoToShow);
+    } else {
+      // Optionally, clear the canvas or handle the case when no video is to be shown
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
   }
+
+  // Initial video update
+  updateVideo();
 };
 
 import.meta.webpackHot?.accept(bg);

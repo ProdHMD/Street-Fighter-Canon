@@ -74,9 +74,11 @@ export const timeline = async (err) => {
       lenis.stop(); // Stop Lenis scroll if on the first slide
       setTimeout(() => {
         lenis.start(); // Restart Lenis scroll after 3 seconds
+        document.body.removeAttribute('data-lenis-prevent');
       }, 1000);
     } else {
       lenis.stop(); // Stop Lenis scroll if not on the first slide
+      document.body.setAttribute('data-lenis-prevent', '');
     }
   }
 
