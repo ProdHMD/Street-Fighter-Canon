@@ -103,7 +103,7 @@ export const barbainit = async (err) => {
     }
   }
 
-  // Page to page transitions
+  // Header per page transitions
   function fromHome() {
     tl.to('#header .brand', {
       duration: 0.25,
@@ -279,6 +279,7 @@ export const barbainit = async (err) => {
         await delay(250);
         toHome();
         toOther();
+        await delay(250);
         toCurrentContent();
         done();
       },
@@ -299,10 +300,10 @@ export const barbainit = async (err) => {
       },
       async leave() {
         const done = this.async();
-        fromHome();
-        fromOther();
         fromCurrentContent();
         await delay(250);
+        fromHome();
+        fromOther();
         done();
       },
       async after() {
@@ -357,15 +358,17 @@ export const barbainit = async (err) => {
       },
       async leave() {
         const done = this.async();
-        fromOther();
         fromCurrentContent();
         await delay(250);
+        fromOther();
         done();
       },
       async after() {
         const done = this.async();
         await delay(250);
+        toHome();
         toBio();
+        await delay(250);
         toCurrentContent();
         done();
       },
@@ -385,9 +388,9 @@ export const barbainit = async (err) => {
       },
       async leave() {
         const done = this.async();
-        fromBio();
         fromCurrentContent();
         await delay(250);
+        fromBio();
         done();
       },
       async after() {
@@ -395,6 +398,7 @@ export const barbainit = async (err) => {
         await delay(250);
         toHome();
         toOther();
+        await delay(250);
         toCurrentContent();
         done();
       },
