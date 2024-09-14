@@ -66,7 +66,7 @@
           @while (have_rows('source')) @php(the_row())
             <li class="list-item mb-4">
               {!! get_sub_field('author') !!} ({!! get_sub_field('year') !!}). {!! get_sub_field('name') !!}
-              @if (get_sub_field('retrieved')) Retrived from <a href="{!! get_sub_field('retrieved') !!}">{!! get_sub_field('retrieved') !!}</a>. @endif
+              @if (get_sub_field('retrieved')) Retrived from <a href="{!! get_sub_field('retrieved') !!}" target="_blank">{!! get_sub_field('retrieved') !!}</a>. @endif
             </li>
           @endwhile
         </ul>

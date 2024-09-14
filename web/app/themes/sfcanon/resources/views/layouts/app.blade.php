@@ -45,6 +45,7 @@
       @endif
 
       @include('sections.background')
+      @include('sections.loader')
     </div>
 
     @php(do_action('get_footer'))

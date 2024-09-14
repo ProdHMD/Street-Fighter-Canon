@@ -10,6 +10,7 @@ import { bg } from './modules/common/bg.js';
 import { home } from './modules/pages/home.js';
 import { timeline } from './modules/pages/timeline.js';
 import { barbainit } from './modules/common/barba.js';
+import { pageLoader } from './modules/common/pageLoader.js';
 
 /**
  * Application entrypoint
@@ -42,6 +43,11 @@ domReady(async () => {
 
   // Init barbaInitJS
   barbainit();
+});
+
+window.addEventListener('load', () => {
+  // Init pageLoaderJS
+  pageLoader();
 });
 
 /**

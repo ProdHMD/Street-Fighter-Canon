@@ -6,6 +6,7 @@
         position: fixed;
         left: 0;
         right: 0;
+        overflow: hidden;
         z-index: 9999;
 
         .brand {
@@ -17,6 +18,8 @@
             color: $white;
             line-height: 1.2969;
             margin: 0.532rem 0 0.532rem 6.25rem;
+            opacity: 0;
+            transform: translateY(-50px);
 
             .home & {
                 margin: 0.532rem auto;
@@ -32,6 +35,37 @@
         }
 
         .nav-primary {
+            @include text_size_24;
+
+            margin: 0.532rem 6.25rem 0.532rem 0;
+
+            .menu-item {
+                opacity: 0;
+                transform: translateY(-50px);
+
+                &:last-child {
+                    a {
+                        padding-right: 0;
+                    }
+                }
+
+                a {
+                    font-family: $sf_pro_text;
+                    font-weight: 400;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $white;
+                    line-height: normal;
+                }
+            }
+
+            .home &,
+            .single-character & {
+                display: none;
+            }
+        }
+
+        .nav-secondary {
             @include text_size_24;
 
             margin: 0.532rem 6.25rem 0.532rem 0;
@@ -53,7 +87,10 @@
                 }
             }
 
-            .home & {
+            .home &,
+            .timeline &,
+            .characters &,
+            .about & {
                 display: none;
             }
         }

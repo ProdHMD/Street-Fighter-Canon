@@ -18,6 +18,24 @@ export const timeline = async (err) => {
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   });
 
+  // Set up progress bar
+  const progressBar = document.querySelector('.progress-bar');
+
+  // Update the lenis scroll
+  lenis.on('scroll', () => {
+    // Set the progress based on lenis scroll
+    let progress = lenis.progress * 100;
+
+    // Update the progress bar
+    progressBar.style.height = `${progress}%`;
+    progressBar.querySelector('.inner-pb').style.height = `${progress}%`;
+  });
+
+  // Reset scroll progress
+  let progress = 0;
+  progressBar.style.height = `${progress}%`;
+  progressBar.querySelector('.inner-pb').style.height = `${progress}%`;
+
   // Update the lenis ScrollTrigger
   lenis.on('scroll', ScrollTrigger.update);
 

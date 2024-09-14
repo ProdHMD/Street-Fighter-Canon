@@ -6,4 +6,14 @@
   <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav nav-pills', 'walker' => new \App\wp_bootstrap5_navwalker(), 'echo' => false]) !!}
   </nav>
+
+  <nav class="nav-secondary" aria-label="{{ wp_get_nav_menu_name('secondary_navigation') }}">
+    {!! wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'nav nav-pills', 'walker' => new \App\wp_bootstrap5_navwalker(), 'echo' => false]) !!}
+  </nav>
 </header>
+
+<div class="progress-bar">
+  <div class="pb-outer">
+    <div class="inner-pb"></div>
+  </div>
+</div>
