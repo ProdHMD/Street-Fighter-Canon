@@ -1,4 +1,5 @@
 import barba from '@barba/core';
+import Lenis from '@studio-freight/lenis';
 import { bg } from './bg.js';
 import { isotope } from './isotope.js';
 import { lenisinit } from './lenis.js';
@@ -11,10 +12,68 @@ export const barbainit = async (err) => {
     console.error(err);
   }
 
+  // Set up lenis
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  });
+
   // Declare timeline variable for functions
   let tl = gsap.timeline();
 
   // Basic page transitions
+  function fromCurrentPage() {
+    tl.to('.page-transition', {
+      pointerEvents: 'all',
+    });
+
+    tl.to('.page-transition .list-unstyled .left-block', {
+      duration: 0.5,
+      translateX: 0,
+    });
+
+    tl.to('.page-transition .list-unstyled .right-block', {
+      duration: 0.5,
+      translateX: 0,
+    }, '<');
+
+    tl.to('.page-transition', {
+      backgroundColor: '#17171a',
+    });
+  }
+
+  function toCurrentPage() {
+    tl.to('.page-transition .list-unstyled', {
+      duration: 0.5,
+      rotate: 0,
+      ease: 'sine.inOut',
+    });
+
+    tl.to('.page-transition', {
+      backgroundColor: 'transparent',
+    });
+
+    tl.to('.page-transition .list-unstyled .left-block', {
+      duration: 0.5,
+      translateX: '-100%',
+      delay: 2,
+    });
+
+    tl.to('.page-transition .list-unstyled .right-block', {
+      duration: 0.5,
+      translateX: '100%',
+    }, '<');
+
+    tl.to('.page-transition', {
+      pointerEvents: 'none',
+    });
+
+    tl.to('.page-transition .list-unstyled', {
+      duration: 0,
+      rotate: 90,
+    });
+  }
+
   function fromCurrentContent() {
     // Home page content
     if ($('body').hasClass('home')) {
@@ -194,7 +253,7 @@ export const barbainit = async (err) => {
   barba.hooks.after(() => {
     // Start at top of page
     window.scrollTo(0, 0);
-    
+
     // Init bgJS
     if (!document.body.classList.contains('single-character')) {
       bg();
@@ -234,7 +293,7 @@ export const barbainit = async (err) => {
     sync: true,
 
     // Turn on and off debug mode
-    debug: false,
+    debug: true,
 
     // All transitions
     transitions: [{
@@ -242,6 +301,7 @@ export const barbainit = async (err) => {
       name: 'default',
       async leave() {
         const done = this.async();
+        lenis.stop();
         fromCurrentContent();
         await delay(250);
         done();
@@ -250,6 +310,7 @@ export const barbainit = async (err) => {
         const done = this.async();
         await delay(250);
         toCurrentContent();
+        lenis.start();
         done();
       },
     }, {
@@ -269,6 +330,7 @@ export const barbainit = async (err) => {
       },
       async leave() {
         const done = this.async();
+        lenis.stop();
         fromHome();
         fromCurrentContent();
         await delay(250);
@@ -276,11 +338,11 @@ export const barbainit = async (err) => {
       },
       async after() {
         const done = this.async();
-        await delay(250);
         toHome();
         toOther();
         await delay(250);
         toCurrentContent();
+        lenis.start();
         done();
       },
     }, {
@@ -298,6 +360,13 @@ export const barbainit = async (err) => {
           'home',
         ],
       },
+      async before() {
+        const done = this.async();
+        lenis.stop();
+        fromCurrentPage();
+        await delay(1000);
+        done();
+      },
       async leave() {
         const done = this.async();
         fromCurrentContent();
@@ -308,9 +377,11 @@ export const barbainit = async (err) => {
       },
       async after() {
         const done = this.async();
-        await delay(250);
+        toCurrentPage();
+        await delay(100);
         toHome();
         toCurrentContent();
+        lenis.start();
         done();
       },
     }, {
@@ -330,17 +401,25 @@ export const barbainit = async (err) => {
           'about',
         ],
       },
-      async leave() {
+      async before() {
         const done = this.async();
-        fromCurrentContent();
-        await delay(250);
+        lenis.stop();
+        fromCurrentPage();
+        await delay(1000);
         done();
       },
-      
-      async after() {
+      async leave() {
         const done = this.async();
         await delay(250);
+        fromCurrentContent();
+        done();
+      },
+      async after() {
+        const done = this.async();
+        toCurrentPage();
+        await delay(100);
         toCurrentContent();
+        lenis.start();
         done();
       },
     }, {
@@ -356,20 +435,28 @@ export const barbainit = async (err) => {
           'bio',
         ],
       },
+      async before() {
+        const done = this.async();
+        lenis.stop();
+        fromCurrentPage();
+        await delay(1000);
+        done();
+      },
       async leave() {
         const done = this.async();
-        fromCurrentContent();
         await delay(250);
         fromOther();
+        fromCurrentContent();
         done();
       },
       async after() {
         const done = this.async();
-        await delay(250);
+        toCurrentPage();
+        await delay(100);
         toHome();
         toBio();
-        await delay(250);
         toCurrentContent();
+        lenis.start();
         done();
       },
     }, {
@@ -386,6 +473,13 @@ export const barbainit = async (err) => {
           'home',
         ],
       },
+      async before() {
+        const done = this.async();
+        lenis.stop();
+        fromCurrentPage();
+        await delay(1000);
+        done();
+      },
       async leave() {
         const done = this.async();
         fromCurrentContent();
@@ -395,31 +489,15 @@ export const barbainit = async (err) => {
       },
       async after() {
         const done = this.async();
-        await delay(250);
+        toCurrentPage();
+        await delay(100);
         toHome();
         toOther();
         await delay(250);
         toCurrentContent();
+        lenis.start();
         done();
       },
-    }],
-
-    // All views
-    views: [{
-      namespace: 'home',
-      afterEnter() {},
-    }, {
-      namespace: 'timeline',
-      afterEnter() {},
-    }, {
-      namespace: 'characters',
-      afterEnter() {},
-    }, {
-      namespace: 'about',
-      afterEnter() {},
-    }, {
-      namespace: 'bio',
-      afterEnter() {},
     }],
   });
 };

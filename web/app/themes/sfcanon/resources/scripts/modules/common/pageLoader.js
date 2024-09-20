@@ -110,6 +110,23 @@ export const pageLoader = async (err) => {
         delay: 0,
       });
     }
+
+    // Single character page content
+    if ($('body').hasClass('single-character')) {
+      tl.to('#header .brand', {
+        duration: 0.25,
+        translateY: 0,
+        opacity: 1,
+        delay: 0,
+      });
+      
+      tl.to('.nav-secondary .menu-item', {
+        duration: 0.25,
+        translateY: 0,
+        opacity: 1,
+        delay: 0.25,
+      });
+    }
   }
 };
 

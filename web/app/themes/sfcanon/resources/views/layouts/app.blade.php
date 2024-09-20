@@ -32,6 +32,9 @@
         {{ __('Skip to content') }}
       </a>
 
+      @include('sections.loader')
+      @include('sections.transition')
+
       @include('sections.header')
 
       <main id="{!! $post_slug !!}" class="main" data-barba="container" data-barba-namespace="{!! $post_slug !!}">
@@ -45,7 +48,6 @@
       @endif
 
       @include('sections.background')
-      @include('sections.loader')
     </div>
 
     @php(do_action('get_footer'))

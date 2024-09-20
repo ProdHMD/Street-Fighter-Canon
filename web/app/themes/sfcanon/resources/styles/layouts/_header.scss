@@ -7,7 +7,7 @@
         left: 0;
         right: 0;
         overflow: hidden;
-        z-index: 9999;
+        z-index: 999;
 
         .brand {
             @include text_size_64;
@@ -71,6 +71,9 @@
             margin: 0.532rem 6.25rem 0.532rem 0;
 
             .menu-item {
+                opacity: 0;
+                transform: translateY(-50px);
+                
                 &:last-child {
                     a {
                         padding-right: 0;
