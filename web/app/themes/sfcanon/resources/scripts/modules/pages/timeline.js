@@ -139,6 +139,32 @@ export const timeline = async (err) => {
       carouselCover.classList.add('active');
     }
   });
+
+  // Stagger animate bottom content on trigger
+  let contentLines = gsap.utils.toArray(['.main #main-content .entry .entry-title', '.main #main-content .entry .entry-text p', '.main #main-content .entry #image', '.main #main-content #game-list .game']);
+
+  contentLines.forEach(contentLine => {
+    gsap.fromTo(contentLine, {
+      opacity: 0,
+      ease: 'sine.inOut',
+      scrollTrigger: {
+        trigger: contentLine,
+        start: 'top top-=75vh',
+        scrub: true,
+      },
+    }, {
+      opacity: 1,
+      duration: 0.25,
+      stagger: 0.25,
+      delay: 0.5,
+      ease: 'sine.inOut',
+      scrollTrigger: {
+        trigger: contentLine,
+        end: 'bottom bottom-=75vh',
+        scrub: true,
+      },
+    });
+  });
 };
 
 import.meta.webpackHot?.accept(timeline);

@@ -107,16 +107,17 @@ html {
                 background-image: url('../../images/sfc-logo.png');
                 background-repeat: no-repeat;
                 background-position: 50%;
+                background-size: 120px;
                 height: 100%;
             }
 
             .left-block {
-                background-position-x: calc(100% + 58px);
+                background-position-x: calc(100% + 60px);
                 transform: translateX(-100%);
             }
 
             .right-block {
-                background-position-x: calc(0% - 58px);
+                background-position-x: calc(0% - 60px);
                 transform: translateX(100%);
             }
         }

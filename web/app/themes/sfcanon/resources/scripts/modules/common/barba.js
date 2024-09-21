@@ -28,12 +28,12 @@ export const barbainit = async (err) => {
     });
 
     tl.to('.page-transition .list-unstyled .left-block', {
-      duration: 0.5,
+      duration: 0.75,
       translateX: 0,
     });
 
     tl.to('.page-transition .list-unstyled .right-block', {
-      duration: 0.5,
+      duration: 0.75,
       translateX: 0,
     }, '<');
 
@@ -54,13 +54,13 @@ export const barbainit = async (err) => {
     });
 
     tl.to('.page-transition .list-unstyled .left-block', {
-      duration: 0.5,
+      duration: 0.75,
       translateX: '-100%',
-      delay: 2,
+      delay: 0.25,
     });
 
     tl.to('.page-transition .list-unstyled .right-block', {
-      duration: 0.5,
+      duration: 0.75,
       translateX: '100%',
     }, '<');
 
@@ -308,7 +308,6 @@ export const barbainit = async (err) => {
       },
       async after() {
         const done = this.async();
-        await delay(250);
         toCurrentContent();
         lenis.start();
         done();
@@ -360,25 +359,27 @@ export const barbainit = async (err) => {
           'home',
         ],
       },
-      async before() {
+      async beforeLeave() {
         const done = this.async();
         lenis.stop();
-        fromCurrentPage();
-        await delay(1000);
+        fromHome();
+        fromOther();
+        fromCurrentContent();
         done();
       },
       async leave() {
         const done = this.async();
-        fromCurrentContent();
-        await delay(250);
-        fromHome();
-        fromOther();
+        fromCurrentPage();
+        await delay(3000);
         done();
       },
-      async after() {
+      async enter() {
         const done = this.async();
         toCurrentPage();
-        await delay(100);
+        done();
+      },
+      async afterEnter() {
+        const done = this.async();
         toHome();
         toCurrentContent();
         lenis.start();
@@ -401,23 +402,25 @@ export const barbainit = async (err) => {
           'about',
         ],
       },
-      async before() {
+      async beforeLeave() {
         const done = this.async();
         lenis.stop();
-        fromCurrentPage();
-        await delay(1000);
+        fromCurrentContent();
         done();
       },
       async leave() {
         const done = this.async();
-        await delay(250);
-        fromCurrentContent();
+        fromCurrentPage();
+        await delay(2000);
         done();
       },
-      async after() {
+      async enter() {
         const done = this.async();
         toCurrentPage();
-        await delay(100);
+        done();
+      },
+      async afterEnter() {
+        const done = this.async();
         toCurrentContent();
         lenis.start();
         done();
@@ -435,24 +438,26 @@ export const barbainit = async (err) => {
           'bio',
         ],
       },
-      async before() {
+      async beforeLeave() {
         const done = this.async();
         lenis.stop();
-        fromCurrentPage();
-        await delay(1000);
-        done();
-      },
-      async leave() {
-        const done = this.async();
-        await delay(250);
         fromOther();
         fromCurrentContent();
         done();
       },
-      async after() {
+      async leave() {
+        const done = this.async();
+        fromCurrentPage();
+        await delay(3000);
+        done();
+      },
+      async enter() {
         const done = this.async();
         toCurrentPage();
-        await delay(100);
+        done();
+      },
+      async afterEnter() {
+        const done = this.async();
         toHome();
         toBio();
         toCurrentContent();
@@ -473,27 +478,28 @@ export const barbainit = async (err) => {
           'home',
         ],
       },
-      async before() {
+      async beforeLeave() {
         const done = this.async();
         lenis.stop();
-        fromCurrentPage();
-        await delay(1000);
+        fromBio();
+        fromCurrentContent();
         done();
       },
       async leave() {
         const done = this.async();
-        fromCurrentContent();
-        await delay(250);
-        fromBio();
+        fromCurrentPage();
+        await delay(3000);
         done();
       },
-      async after() {
+      async enter() {
         const done = this.async();
         toCurrentPage();
-        await delay(100);
+        done();
+      },
+      async afterEnter() {
+        const done = this.async();
         toHome();
         toOther();
-        await delay(250);
         toCurrentContent();
         lenis.start();
         done();
