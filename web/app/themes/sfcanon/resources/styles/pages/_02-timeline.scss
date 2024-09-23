@@ -29,25 +29,76 @@
                         #entry-main {
                             padding-right: calc(8.3333% + 3rem);
                             overflow: hidden;
-        
-                            .entry {
-                                min-width: 100%;
-        
-                                .entry-title {
-                                    font-size: 14rem;
-                                    line-height: 0.7054;
-        
-                                    @include media-breakpoint-down(xl) {
-                                        font-size: 9.75rem;
+
+                            .entry-item {
+                                // Fade transition override
+                                &.active {
+                                    &.carousel-item-start,
+                                    &.carousel-item-end {
+                                        transition: opacity 0.5s 0s ease-in-out;
                                     }
-        
-                                    @include media-breakpoint-down(md) {
-                                        font-size: 5.75rem;
+
+                                    .entry {
+                                        .entry-title {
+                                            opacity: 1;
+                                            transform: translateX(0);
+                                            transition: all 0.5s 0.25s ease-in-out;
+                                        }
+
+                                        .entry-text {
+                                            @for $x from 1 through 10 {
+                                                > :nth-child(#{$x}) {
+                                                    opacity: 1;
+                                                    transform: translateX(0);
+                                                    transition: all 0.5s 0.125s ease-in-out;
+                                                }
+                                            }
+                                        }
+
+                                        #image {
+                                            opacity: 1;
+                                            transform: translateX(0);
+                                            transition: all 0.5s 0.75s ease-in-out;
+                                        }
                                     }
                                 }
-        
-                                .entry-text {
-                                    font-size: 1.5rem;
+
+                                .entry {
+                                    min-width: 100%;
+            
+                                    .entry-title {
+                                        font-size: 14rem;
+                                        line-height: 0.7054;
+                                        opacity: 0;
+                                        transform: translateX(-50px);
+                                        transition: all 0.5s 0.25s ease-in-out;
+                                                
+                                        @include media-breakpoint-down(xl) {
+                                            font-size: 9.75rem;
+                                        }
+            
+                                        @include media-breakpoint-down(md) {
+                                            font-size: 5.75rem;
+                                        }
+                                    }
+            
+                                    .entry-text {
+                                        font-size: 1.5rem;
+
+                                        @for $x from 1 through 10 {
+                                            > :nth-child(#{$x}) {
+                                                opacity: 0;
+                                                transform: translateX(-50px);
+                                                transition: all 0.5s 0.125s ease-in-out;
+                                            }
+                                        }
+                                    }
+
+                                    #image {
+                                        opacity: 0;
+                                        transform: translateX(50px);
+                                        transition: all 0.5s 0.75s ease-in-out;
+                                    }
                                 }
                             }
                         }

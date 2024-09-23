@@ -1,7 +1,7 @@
 <div class="container-fluid" id="main-content">
   <div class="row" id="entry-row">
     <div class="carousel-scroll-cover active"></div>
-    <div class="col-xl-12 carousel" id="timeline-carousel">
+    <div class="col-xl-12 carousel slide carousel-fade" id="timeline-carousel">
       <div class="row" id="top-content">
         <div class="col-xl-12" id="entry-main">
           <div class="container-fluid ps-0 pe-0 carousel-inner" id="entry-container">
@@ -25,8 +25,8 @@
                     }
                     $game_term = join( ", ", $game_terms );
                   ?>
-                  <div class="col-xl-12 carousel-item" id="entry-year-{!! $entry_slug !!}" data-game="{!! $game_term !!}">
-                    <div class="entry entry-item row align-items-center">
+                  <div class="col-xl-12 carousel-item entry-item" id="entry-year-{!! $entry_slug !!}" data-game="{!! $game_term !!}">
+                    <div class="entry row align-items-center">
                       <div class="col-xl-8" id="entry-text-main">
                         <h2 class="entry-title">{!! get_the_title() !!}</h2>
                         <div class="entry-text">@php(the_content())</div>
@@ -65,7 +65,7 @@
           
           <ul class="row list-unstyled mb-0">
             <?php foreach($games as $game) : ?>
-              <li class="game pt-1 pb-1" id="{!! $game->slug !!}" data-bs-target="#timeline-carousel" data-bs-slide-to="{!! $game->order !!}"><img src="{!! $game->image['url'] !!}" class="img-fluid" /></li>
+              <li class="game indicator pt-1 pb-1" id="{!! $game->slug !!}" data-bs-target="#timeline-carousel" data-bs-slide-to="{!! $game->order !!}"><img src="{!! $game->image['url'] !!}" class="img-fluid" /></li>
             <?php endforeach; ?>
           </ul>
         </div>
@@ -74,7 +74,7 @@
       <div class="row" id="bottom-content">
         <div class="col-xl-4 offset-xl-4 carousel-indicators" id="scroll-bar">
           <?php foreach($games as $game) : ?>
-            <div class="scroll-thumb" data-bs-target="#timeline-carousel" data-bs-slide-to="{!! $game->order !!}"></div>
+            <div class="scroll-thumb indicator" id="thumb-{!! $game->order !!}" data-bs-target="#timeline-carousel" data-bs-slide-to="{!! $game->order !!}"></div>
           <?php endforeach; ?>
         </div>
       </div>

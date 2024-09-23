@@ -12,6 +12,11 @@ export const timeline = async (err) => {
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger, Draggable);
 
+  // Add configurations to GSAP
+  gsap.config({
+    nullTargetWarn: true,
+  });
+
   // Set up lenis
   const lenis = new Lenis({
     duration: 1.2,
@@ -79,7 +84,6 @@ export const timeline = async (err) => {
   // Initialize Bootstrap Carousel
   const carouselElement = document.querySelector('#timeline-carousel'); // Replace with your carousel ID
   const carousel = new Carousel(carouselElement, {
-    interval: 2000,
     wrap: false,
   });
 
@@ -140,30 +144,30 @@ export const timeline = async (err) => {
     }
   });
 
-  // Stagger animate bottom content on trigger
-  let contentLines = gsap.utils.toArray(['.main #main-content .entry .entry-title', '.main #main-content .entry .entry-text p', '.main #main-content .entry #image', '.main #main-content #game-list .game']);
+  const items = carouselElement.querySelectorAll('.carousel-item');
 
-  contentLines.forEach(contentLine => {
-    gsap.fromTo(contentLine, {
-      opacity: 0,
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: contentLine,
-        start: 'top top-=75vh',
-        scrub: true,
-      },
-    }, {
-      opacity: 1,
-      duration: 0.25,
-      stagger: 0.25,
-      delay: 0.5,
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: contentLine,
-        end: 'bottom bottom-=75vh',
-        scrub: true,
-      },
-    });
+  carouselElement.addEventListener('slide.bs.carousel', function (event) {
+    const activeItem = carouselElement.querySelector('.carousel-item.active');
+    const nextIndex = event.to; // Get the index of the next item
+    const nextItem = items[nextIndex];
+
+    // Add classes to trigger animations
+    activeItem.classList.add('hidden');
+    nextItem.classList.add('visible');
+
+    // Remove the active class after the transition
+    setTimeout(() => {
+      activeItem.classList.remove('active');
+      nextItem.classList.add('active');
+      nextItem.classList.remove('visible');
+    }, 2000); // Match this with the CSS transition duration
+  });
+
+  carouselElement.addEventListener('slid.bs.carousel', function () {
+    const activeItem = carouselElement.querySelector('.carousel-item.active');
+    
+    // Clean up classes (optional if you want to keep them for any reason)
+    activeItem.classList.remove('hidden');
   });
 };
 

@@ -293,7 +293,7 @@ export const barbainit = async (err) => {
     sync: true,
 
     // Turn on and off debug mode
-    debug: true,
+    debug: false,
 
     // All transitions
     transitions: [{
