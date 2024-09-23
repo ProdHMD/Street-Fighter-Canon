@@ -73,32 +73,6 @@ export const lenisinit = async (err) => {
   // Initialize the scroll down button
   viewMore();
 
-  // Stagger animate bottom content on trigger
-  let contentLines = gsap.utils.toArray(['.main #main-content h2', '.main #main-content p', '.main #main-content li', 'main #main-content .chara']);
-
-  contentLines.forEach(contentLine => {
-    gsap.fromTo(contentLine, {
-      opacity: 0,
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: contentLine,
-        start: 'top top-=75vh',
-        scrub: true,
-      },
-    }, {
-      opacity: 1,
-      duration: 0.25,
-      stagger: 0.25,
-      delay: 0.5,
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: contentLine,
-        end: 'bottom bottom-=75vh',
-        scrub: true,
-      },
-    });
-  });
-
   // Add resize observer
   new ResizeObserver(() => lenis.on('scroll', ScrollTrigger.update)).observe(app);
 };
