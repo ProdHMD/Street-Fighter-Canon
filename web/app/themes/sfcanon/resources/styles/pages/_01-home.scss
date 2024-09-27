@@ -6,6 +6,10 @@
         align-items: flex-end;
         min-height: 100vh;
 
+        @include media-breakpoint-down(xl) {
+            align-items: center;
+        }
+
         @include media-breakpoint-down(sm) {
             align-items: center;
         }
@@ -20,6 +24,10 @@
 
         #content {
             padding: 0 6.25rem 6.25rem;
+
+            @include media-breakpoint-down(xl) {
+                padding: 0 0 6.25rem;
+            }
 
             @include media-breakpoint-down(sm) {
                 padding: 0 1.25rem 1.25rem;

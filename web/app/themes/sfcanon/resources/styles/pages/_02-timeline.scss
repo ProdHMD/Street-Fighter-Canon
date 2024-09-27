@@ -27,10 +27,18 @@
 
                     #top-content {
                         position: relative;
+
+                        @include media-breakpoint-down(xl) {
+                            align-items: center;
+                        }
         
                         #entry-main {
                             padding-right: calc(8.3333% + 3rem);
                             overflow: hidden;
+
+                            @include media-breakpoint-down(xl) {
+                                padding-right: calc(8.3333% + 3rem);
+                            }
 
                             @include media-breakpoint-down(sm) {
                                 padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -65,12 +73,6 @@
                                             opacity: 1;
                                             transform: translateX(0);
                                             transition: all 0.5s 0.75s ease-in-out;
-
-                                            img {
-                                                @include media-breakpoint-down(sm) {
-                                                    box-shadow: inset -2rem 1.5rem 0.5rem 0.125rem $black;
-                                                }
-                                            }
                                         }
                                     }
                                 }
@@ -83,6 +85,8 @@
                                         line-height: 0.7054;
                                         opacity: 0;
                                         transform: translateX(-50px);
+                                        z-index: 2;
+                                        position: relative;
                                         transition: all 0.5s 0.25s ease-in-out;
                                                 
                                         @include media-breakpoint-down(xl) {
@@ -96,6 +100,25 @@
             
                                     .entry-text {
                                         font-size: 1.5rem;
+                                        position: relative;
+
+                                        &::before {
+                                            @include media-breakpoint-down(xl) {
+                                                content: '';
+                                                position: absolute;
+                                                inset: 0;
+                                                background-color: #17171ad9;
+                                                box-shadow: 0 -1rem 1rem 2.5rem #17171ad9;
+                                            }
+
+                                            @include media-breakpoint-down(sm) {
+                                                content: '';
+                                                position: absolute;
+                                                inset: 0;
+                                                background-color: #17171ad9;
+                                                box-shadow: 0 -1rem 1rem 2.5rem #17171ad9;
+                                            }
+                                        }
 
                                         @include media-breakpoint-down(sm) {
                                             font-size: 1.125rem;
@@ -120,6 +143,15 @@
                                         transform: translateX(50px);
                                         transition: all 0.5s 0.75s ease-in-out;
 
+                                        @include media-breakpoint-down(xl) {
+                                            position: absolute;
+                                            z-index: -1;
+                                            top: 0;
+                                            right: 0;
+                                            max-width: 50vw;
+                                            margin-top: -15%;
+                                        }
+
                                         @include media-breakpoint-down(sm) {
                                             position: absolute;
                                             z-index: -1;
@@ -135,9 +167,14 @@
         
                         #game-list {
                             position: absolute;
+                            top: 0;
                             right: 0;
                             background-color: $black;
                             z-index: 10;
+
+                            @include media-breakpoint-down(xl) {
+                                top: auto;
+                            }
         
                             .game {
                                 padding-left: 2rem;
@@ -145,11 +182,21 @@
                                 z-index: 1;
                                 cursor: pointer;
                                 transition: .2s ease-in-out all;
+
+                                @include media-breakpoint-down(xl) {
+                                    padding-left: 0;
+                                    padding-right: 0;
+                                }
         
                                 &:hover {
                                     padding-left: .5rem;
                                     padding-right: .5rem;
                                     transition: .2s ease-in-out all;
+
+                                    @include media-breakpoint-down(xl) {
+                                        padding-left: 0;
+                                        padding-right: 0;
+                                    }
                                 }
                             }
                         }

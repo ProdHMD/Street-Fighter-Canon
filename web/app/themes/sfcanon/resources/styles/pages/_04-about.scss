@@ -17,6 +17,10 @@
                     font-size: 1.5rem;
                     line-height: normal;
 
+                    @include media-breakpoint-down(xl) {
+                        font-size: 1.5rem;
+                    }
+
                     @include media-breakpoint-down(sm) {
                         font-size: 1rem;
                     }
@@ -34,11 +38,20 @@
                     font-size: 1.5rem;
                     line-height: normal;
 
+                    @include media-breakpoint-down(xl) {
+                        font-size: 1.5rem;
+                    }
+
                     @include media-breakpoint-down(sm) {
                         font-size: 1rem;
                     }
 
                     a {
+                        @include media-breakpoint-down(xl) {
+                            word-break: break-word;
+                            overflow-wrap: break-word;
+                        }
+
                         @include media-breakpoint-down(sm) {
                             word-break: break-word;
                             overflow-wrap: break-word;

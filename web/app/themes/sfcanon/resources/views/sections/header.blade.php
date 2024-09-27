@@ -1,4 +1,4 @@
-<header class="banner navbar-expand-lg d-flex flex-wrap justify-content-center align-items-center" id="header">
+<header class="banner navbar-expand-xl d-flex flex-wrap justify-content-center align-items-center" id="header">
   <a class="brand align-items-center me-auto" href="{{ home_url('/') }}">
     {!! $siteName !!}
   </a>

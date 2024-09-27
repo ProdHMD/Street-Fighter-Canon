@@ -18,12 +18,21 @@
                 }
 
                 .list-group {
+                    @include media-breakpoint-down(xl) {
+                        width: 100%;
+                        justify-content: space-between;
+                    }
+                    
                     @include media-breakpoint-down(sm) {
                         justify-content: space-between;
                     }
 
                     .button {
                         margin-right: 1rem;
+
+                        @include media-breakpoint-down(xl) {
+                            margin-right: 0;
+                        }
 
                         button {
                             background-image: url('../../images/svgs/sfc-border.svg');
@@ -34,6 +43,12 @@
                             text-decoration: none;
                             font-weight: 400;
                             transition: all .125s ease-in-out;
+
+                            @include media-breakpoint-down(sm) {
+                                background-image: url('../../images/svgs/sfc-border-t.svg');
+                                font-size: 1.25rem;
+                                padding: 0.5rem 1.025rem;
+                            }
 
                             @include media-breakpoint-down(sm) {
                                 background-image: url('../../images/svgs/sfc-border-m.svg');
@@ -47,6 +62,10 @@
                                 text-decoration: none;
                                 transition: all .125s ease-in-out;
 
+                                @include media-breakpoint-down(xl) {
+                                    background-image: url('../../images/svgs/sfc-fill-t.svg');
+                                }
+
                                 @include media-breakpoint-down(sm) {
                                     background-image: url('../../images/svgs/sfc-fill-m.svg');
                                 }
@@ -57,6 +76,10 @@
                             button {
                                 padding: 1rem 4.65rem;
 
+                                @include media-breakpoint-down(xl) {
+                                    padding: 1rem 4.25rem;
+                                }
+
                                 @include media-breakpoint-down(sm) {
                                     padding: 0.5rem 1.25rem;
                                 }
@@ -66,6 +89,10 @@
                         &:nth-child(2) {
                             button {
                                 padding: 1rem 4.05rem;
+
+                                @include media-breakpoint-down(xl) {
+                                    padding: 1rem 3.625rem;
+                                }
 
                                 @include media-breakpoint-down(sm) {
                                     padding: 0.5rem 1.025rem;
@@ -78,6 +105,10 @@
 
                             button {
                                 padding: 1rem 7.125rem;
+
+                                @include media-breakpoint-down(xl) {
+                                    padding: 1rem 6.325rem;
+                                }
 
                                 @include media-breakpoint-down(sm) {
                                     padding: 0.5rem 3rem;
@@ -162,7 +193,7 @@
                             @include media-breakpoint-down(sm) {
                                 margin-bottom: 0.5rem;
                             }
-                            
+
                             &:first-child {
                                 padding-left: calc(var(--bs-gutter-x) * .5) !important;
                             }
@@ -204,6 +235,10 @@
                 position: relative;
                 max-height: 100vh;
                 max-width: fit-content;
+
+                @include media-breakpoint-down(xl) {
+                    max-height: 50vh;
+                }
 
                 @include media-breakpoint-down(sm) {
                     max-height: 35vh;

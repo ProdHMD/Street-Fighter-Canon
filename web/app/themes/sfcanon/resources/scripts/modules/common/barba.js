@@ -246,8 +246,19 @@ export const barbainit = async (err) => {
     });
   }
 
+  // Function to collapse mobile menu on menu click
+  function navClick() {
+    $('#header .nav li a').on('click', function() {
+      $('#header .navbar-collapse').removeClass('show');
+      $('#header .navbar-toggler').addClass('collapsed').attr('aria-expanded', false);
+    });
+  }
+
   // Initial update on page load
   updateMenuClasses(window.location.pathname);
+
+  // Update mobile collapse state on link click
+  navClick();
 
   // All hooks
   barba.hooks.after(() => {

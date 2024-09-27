@@ -4,7 +4,7 @@
       <h2 class="title">Credits</h2>
       
       <div class="row" id="credits">
-        <div class="col-xl-5 d-md-block d-none">
+        <div class="col-xl-5 d-xl-block d-none">
           <ul class="list-unstyled mb-0">
             <li class="list-item"><strong>Design, Development</strong></li>
             <li class="list-item"><strong>Research, Curation</strong></li>
@@ -12,7 +12,7 @@
           </ul>
         </div>
 
-        <div class="col-xl-7 d-md-block d-none">
+        <div class="col-xl-7 d-xl-block d-none">
           @if (have_rows('developer'))
             @while (have_rows('developer')) @php(the_row())
               <ul class="list-unstyled mb-0">
@@ -48,7 +48,7 @@
           @endif
         </div>
 
-        <div class="col-12" id="mobile-credits">
+        <div class="col-lg-12 col-12 d-xl-none" id="mobile-credits">
           @if (have_rows('developer'))
             @while (have_rows('developer')) @php(the_row())
               <ul class="list-unstyled mb-2">

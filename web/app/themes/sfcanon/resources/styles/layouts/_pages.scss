@@ -213,6 +213,14 @@ html {
             margin-bottom: 6.25rem;
             padding: 6.25rem 6.25rem 0;
 
+            @include media-breakpoint-down(xl) {
+                padding: 0;
+                margin-left: -0.75rem;
+                margin-right: -0.75rem;
+                align-items: center;
+                transform: translateY(5%);
+            }
+
             @include media-breakpoint-down(sm) {
                 padding: 0;
                 margin-left: -0.75rem;
@@ -297,6 +305,10 @@ html {
             background-color: $black;
             padding: 6.25rem 6.25rem 0;
 
+            @include media-breakpoint-down(xl) {
+                padding: 6.25rem 0 0;
+            }
+
             @include media-breakpoint-down(sm) {
                 padding: 6.25rem 0 0;
             }
@@ -322,6 +334,10 @@ html {
             opacity: 0;
             overflow: hidden;
             mix-blend-mode: overlay;
+
+            @include media-breakpoint-down(xl) {
+                transform: translateX(-37.5%);
+            }
 
             @include media-breakpoint-down(sm) {
                 transform: translateX(-37.5%);

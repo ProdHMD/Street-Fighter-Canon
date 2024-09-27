@@ -7,7 +7,7 @@
             <h1 class="title">{!! $title !!}</h1>
 
             <div class="row" id="chara-info">
-              <div class="col-xl-6 col-8" id="bio-text">
+              <div class="col-xl-6 col-lg-6 col-8" id="bio-text">
                 @php(the_content())
               </div>
 
@@ -51,7 +51,7 @@
             ksort($games, SORT_NUMERIC);
           ?>
             <?php foreach($games as $game) : ?>
-              <li class="game col-xl-1 col-3 ps-1 pe-1" id="{!! $game->slug !!}"><img src="{!! $game->image['url'] !!}" class="img-fluid" /></li>
+              <li class="game col-xl-1 col-lg-1 col-3 ps-1 pe-1" id="{!! $game->slug !!}"><img src="{!! $game->image['url'] !!}" class="img-fluid" /></li>
             <?php endforeach; ?>
           </ul>
       </header>

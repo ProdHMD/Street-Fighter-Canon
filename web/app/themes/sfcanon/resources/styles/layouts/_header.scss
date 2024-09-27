@@ -21,6 +21,10 @@
             opacity: 0;
             transform: translateY(-50px);
 
+            @include media-breakpoint-down(xl) {
+                margin: 0.532rem 0 0.532rem 3.75rem;
+            }
+
             @include media-breakpoint-down(sm) {
                 margin: 0.532rem 0 0.532rem 1.25rem;
             }
@@ -28,8 +32,8 @@
             .home & {
                 margin: 0.532rem auto;
 
-                @include media-breakpoint-down(lg) {
-                    margin: 0.532rem 0 0.532rem 4rem;
+                @include media-breakpoint-down(xl) {
+                    margin: 0.532rem 0 0.532rem 3.75rem;
                 }
 
                 @include media-breakpoint-down(sm) {
@@ -43,6 +47,12 @@
 
             margin: 0.532rem 6.25rem 0.532rem 0;
 
+            @include media-breakpoint-down(xl) {
+                margin: 0.532rem 3.75rem;
+                width: 100%;
+                background-color: $black;
+            }
+
             @include media-breakpoint-down(sm) {
                 margin: 0.532rem 1.25rem;
                 width: 100%;
@@ -50,6 +60,10 @@
             }
 
             #menu-header {
+                @include media-breakpoint-down(xl) {
+                    justify-content: center;
+                }
+
                 @include media-breakpoint-down(sm) {
                     justify-content: center;
                 }
@@ -62,6 +76,10 @@
                 &:last-child {
                     a {
                         padding-right: 0;
+
+                        @include media-breakpoint-down(xl) {
+                            padding-right: var(--bs-nav-link-padding-x);
+                        }
 
                         @include media-breakpoint-down(sm) {
                             padding-right: var(--bs-nav-link-padding-x);
@@ -90,8 +108,16 @@
 
             margin: 0.532rem 6.25rem 0.532rem 0;
 
+            @include media-breakpoint-down(xl) {
+                margin: 0.532rem 3.75rem;
+                width: 100%;
+                background-color: $black;
+            }
+
             @include media-breakpoint-down(sm) {
-                margin: 0.532rem 6.25rem 0.532rem auto;
+                margin: 0.532rem 1.25rem;
+                width: 100%;
+                background-color: $black;
             }
 
             .menu-item {
@@ -129,9 +155,25 @@
         .navbar-toggler {
             margin: 1.4375rem 1.25rem auto 0;
 
+            @include media-breakpoint-down(xl) {
+                margin: 2.4375rem 3.75rem auto 0;
+            }
+
+            @include media-breakpoint-down(sm) {
+                margin: 1.4375rem 1.25rem auto 0;
+            }
+
             .navbar-toggler-icon {
                 width: 2.5rem;
                 height: auto;
+
+                @include media-breakpoint-down(xl) {
+                    width: 3.75rem;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    width: 2.5rem;
+                }
 
                 .bar {
                     display: block;
@@ -139,6 +181,16 @@
                     width: 100%;
                     background-color: $white;
                     margin-bottom: 0.282rem;
+
+                    @include media-breakpoint-down(xl) {
+                        height: 3px;
+                        margin-bottom: 0.4375rem;
+                    }
+
+                    @include media-breakpoint-down(sm) {
+                        height: 2px;
+                        margin-bottom: 0.282rem;
+                    }
 
                     &:last-child {
                         margin-bottom: 0;
@@ -150,6 +202,14 @@
                 .navbar-toggler-icon {
                     width: 2.5rem;
                     height: auto;
+
+                    @include media-breakpoint-down(xl) {
+                        width: 3.75rem;
+                    }
+    
+                    @include media-breakpoint-down(sm) {
+                        width: 2.5rem;
+                    }
     
                     .bar {
                         display: block;
@@ -157,6 +217,16 @@
                         width: 100%;
                         background-color: $white;
                         margin-bottom: 0.282rem;
+
+                        @include media-breakpoint-down(xl) {
+                            height: 3px;
+                            margin-bottom: 0.4375rem;
+                        }
+
+                        @include media-breakpoint-down(sm) {
+                            height: 2px;
+                            margin-bottom: 0.282rem;
+                        }
     
                         &:last-child {
                             margin-bottom: 0;
