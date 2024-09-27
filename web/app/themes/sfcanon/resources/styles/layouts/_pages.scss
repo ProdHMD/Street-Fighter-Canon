@@ -99,6 +99,10 @@ html {
             display: flex;
             transform: rotate(90deg) scale(1.7778);
 
+            @include media-breakpoint-down(sm) {
+                transform: rotate(0deg) !important;
+            }
+
             .left-block,
             .right-block {
                 width: 50%;
@@ -157,7 +161,7 @@ html {
             padding: 0 3.75rem;
         }
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
             padding: 0 1.25rem;
         }
 
@@ -209,6 +213,14 @@ html {
             margin-bottom: 6.25rem;
             padding: 6.25rem 6.25rem 0;
 
+            @include media-breakpoint-down(sm) {
+                padding: 0;
+                margin-left: -0.75rem;
+                margin-right: -0.75rem;
+                align-items: center;
+                transform: translateY(5%);
+            }
+
             .logged-in & {
                 min-height: calc(100vh - (6.25rem + 2rem));
                 margin-bottom: calc(6.25rem + 2rem);
@@ -231,7 +243,7 @@ html {
                         font-size: 9.75rem;
                     }
 
-                    @include media-breakpoint-down(md) {
+                    @include media-breakpoint-down(sm) {
                         font-size: 5.75rem;
                     }
                 }
@@ -249,13 +261,13 @@ html {
                         font-size: 2.25rem;
                     }
 
-                    @include media-breakpoint-down(md) {
+                    @include media-breakpoint-down(sm) {
                         font-size: 1.5rem;
                     }
                 }
 
                 .scroll-down-btn {
-                    background-image: url('../../images/svgs/sf-border.svg');
+                    background-image: url('../../images/svgs/sfc-border.svg');
                     background-size: cover;
                     background-repeat: no-repeat;
                     padding: 1rem 4.65rem;
@@ -266,7 +278,7 @@ html {
                     transition: all .125s ease-in-out;
 
                     &:hover {
-                        background-image: url('../../images/svgs/sf-fill.svg');
+                        background-image: url('../../images/svgs/sfc-fill.svg');
                         color: $black;
                         text-decoration: none;
                         transition: all .125s ease-in-out;
@@ -284,6 +296,10 @@ html {
             color: $white;
             background-color: $black;
             padding: 6.25rem 6.25rem 0;
+
+            @include media-breakpoint-down(sm) {
+                padding: 6.25rem 0 0;
+            }
 
             .logged-in & {
                 min-height: calc(100vh - 2rem);
@@ -306,6 +322,10 @@ html {
             opacity: 0;
             overflow: hidden;
             mix-blend-mode: overlay;
+
+            @include media-breakpoint-down(sm) {
+                transform: translateX(-37.5%);
+            }
 
             .background-media {
                 position: absolute;
@@ -344,6 +364,10 @@ html {
             z-index: 0;
             mix-blend-mode: overlay;
             opacity: 0.75;
+
+            @include media-breakpoint-down(sm) {
+                transform: translateX(-40%);
+            }
         }
     }
 }

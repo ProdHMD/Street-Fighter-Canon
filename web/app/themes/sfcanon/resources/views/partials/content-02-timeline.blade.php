@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="col-xl-1" id="game-list">
+        <div class="col-xl-1 d-none d-md-block" id="game-list">
           <?php
             $args = array('hide_empty' => false);
             $terms = get_terms('game', $args);

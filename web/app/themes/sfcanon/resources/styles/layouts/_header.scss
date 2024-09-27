@@ -21,6 +21,10 @@
             opacity: 0;
             transform: translateY(-50px);
 
+            @include media-breakpoint-down(sm) {
+                margin: 0.532rem 0 0.532rem 1.25rem;
+            }
+
             .home & {
                 margin: 0.532rem auto;
 
@@ -29,7 +33,7 @@
                 }
 
                 @include media-breakpoint-down(sm) {
-                    margin: 0.532rem 0 0.532rem 2rem; 
+                    margin: 0.532rem 0 0.532rem 2rem;
                 }
             }
         }
@@ -39,6 +43,18 @@
 
             margin: 0.532rem 6.25rem 0.532rem 0;
 
+            @include media-breakpoint-down(sm) {
+                margin: 0.532rem 1.25rem;
+                width: 100%;
+                background-color: $black;
+            }
+
+            #menu-header {
+                @include media-breakpoint-down(sm) {
+                    justify-content: center;
+                }
+            }
+
             .menu-item {
                 opacity: 0;
                 transform: translateY(-50px);
@@ -46,6 +62,10 @@
                 &:last-child {
                     a {
                         padding-right: 0;
+
+                        @include media-breakpoint-down(sm) {
+                            padding-right: var(--bs-nav-link-padding-x);
+                        }
                     }
                 }
 
@@ -70,6 +90,10 @@
 
             margin: 0.532rem 6.25rem 0.532rem 0;
 
+            @include media-breakpoint-down(sm) {
+                margin: 0.532rem 6.25rem 0.532rem auto;
+            }
+
             .menu-item {
                 opacity: 0;
                 transform: translateY(-50px);
@@ -77,6 +101,10 @@
                 &:last-child {
                     a {
                         padding-right: 0;
+
+                        @include media-breakpoint-down(sm) {
+                            padding-right: var(--bs-nav-link-padding-x);
+                        }
                     }
                 }
 
@@ -94,6 +122,90 @@
             .timeline &,
             .characters &,
             .about & {
+                display: none;
+            }
+        }
+
+        .navbar-toggler {
+            margin: 1.4375rem 1.25rem auto 0;
+
+            .navbar-toggler-icon {
+                width: 2.5rem;
+                height: auto;
+
+                .bar {
+                    display: block;
+                    height: 2px;
+                    width: 100%;
+                    background-color: $white;
+                    margin-bottom: 0.282rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &.collapsed {
+                .navbar-toggler-icon {
+                    width: 2.5rem;
+                    height: auto;
+    
+                    .bar {
+                        display: block;
+                        height: 2px;
+                        width: 100%;
+                        background-color: $white;
+                        margin-bottom: 0.282rem;
+    
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        &.top {
+                            transform: rotate(0);
+                            transform-origin: 0;
+                            transition: transform 0.25s ease-in-out;
+                        }
+
+                        &.middle {
+                            opacity: 1;
+                            transition: transform 0.25s ease-in-out;
+                        }
+
+                        &.bottom {
+                            transform: rotate(0);
+                            transform-origin: 0;
+                            transition: transform 0.25s ease-in-out;
+                        }
+                    }
+                }
+            }
+            
+            &:not(.collapsed) {
+                .navbar-toggler-icon {
+                    .bar {
+                        &.top {
+                            transform: rotate(20deg);
+                            transform-origin: 0;
+                            transition: transform 0.25s ease-in-out;
+                        }
+
+                        &.middle {
+                            opacity: 0;
+                            transition: transform 0.25s ease-in-out;
+                        }
+
+                        &.bottom {
+                            transform: rotate(-20deg);
+                            transform-origin: 0;
+                            transition: transform 0.25s ease-in-out;
+                        }
+                    }
+                }
+            }
+
+            .home & {
                 display: none;
             }
         }

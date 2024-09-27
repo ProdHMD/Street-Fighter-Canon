@@ -4,6 +4,8 @@
         #main-content {
             padding-top: 6.25rem;
 
+
+
             #entry-row {
                 position: relative;
                 min-height: calc(100vh - 15.625rem);
@@ -29,6 +31,10 @@
                         #entry-main {
                             padding-right: calc(8.3333% + 3rem);
                             overflow: hidden;
+
+                            @include media-breakpoint-down(sm) {
+                                padding-right: calc(var(--bs-gutter-x) * 0.5);
+                            }
 
                             .entry-item {
                                 // Fade transition override
@@ -59,6 +65,12 @@
                                             opacity: 1;
                                             transform: translateX(0);
                                             transition: all 0.5s 0.75s ease-in-out;
+
+                                            img {
+                                                @include media-breakpoint-down(sm) {
+                                                    box-shadow: inset -2rem 1.5rem 0.5rem 0.125rem $black;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -74,16 +86,25 @@
                                         transition: all 0.5s 0.25s ease-in-out;
                                                 
                                         @include media-breakpoint-down(xl) {
-                                            font-size: 9.75rem;
+                                            font-size: 12rem;
                                         }
             
-                                        @include media-breakpoint-down(md) {
-                                            font-size: 5.75rem;
+                                        @include media-breakpoint-down(sm) {
+                                            font-size: 9.3125rem;
                                         }
                                     }
             
                                     .entry-text {
                                         font-size: 1.5rem;
+
+                                        @include media-breakpoint-down(sm) {
+                                            font-size: 1.125rem;
+                                            line-height: normal;
+                                        }
+
+                                        p {
+                                            text-shadow: $black 0.25rem 0 1rem;
+                                        }
 
                                         @for $x from 1 through 10 {
                                             > :nth-child(#{$x}) {
@@ -98,6 +119,15 @@
                                         opacity: 0;
                                         transform: translateX(50px);
                                         transition: all 0.5s 0.75s ease-in-out;
+
+                                        @include media-breakpoint-down(sm) {
+                                            position: absolute;
+                                            z-index: -1;
+                                            top: 0;
+                                            right: 0;
+                                            max-width: 50vw;
+                                            margin-top: -15%;
+                                        }
                                     }
                                 }
                             }
@@ -131,6 +161,11 @@
                         right: 0;
                         bottom: 4.6875rem;
                         z-index: 10;
+
+                        @include media-breakpoint-down(sm) {
+                            margin: 0 calc(0.5 * var(--bs-gutter-x));
+                            bottom: 2rem;
+                        }
                         
                         #scroll-bar {
                             padding: 0;

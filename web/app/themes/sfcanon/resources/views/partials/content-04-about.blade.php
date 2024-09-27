@@ -4,7 +4,7 @@
       <h2 class="title">Credits</h2>
       
       <div class="row" id="credits">
-        <div class="col-xl-5">
+        <div class="col-xl-5 d-md-block d-none">
           <ul class="list-unstyled mb-0">
             <li class="list-item"><strong>Design, Development</strong></li>
             <li class="list-item"><strong>Research, Curation</strong></li>
@@ -12,7 +12,7 @@
           </ul>
         </div>
 
-        <div class="col-xl-7">
+        <div class="col-xl-7 d-md-block d-none">
           @if (have_rows('developer'))
             @while (have_rows('developer')) @php(the_row())
               <ul class="list-unstyled mb-0">
@@ -44,6 +44,47 @@
           @if (get_field('server_host'))
             <ul class="list-unstyled mb-0">
               <li class="list-item"><strong>{!! get_field('server_host') !!}</strong></li>
+            </ul>
+          @endif
+        </div>
+
+        <div class="col-12" id="mobile-credits">
+          @if (have_rows('developer'))
+            @while (have_rows('developer')) @php(the_row())
+              <ul class="list-unstyled mb-2">
+                @if (have_rows('member'))
+                  @while (have_rows('member')) @php(the_row())
+                    <li class="list-item">
+                      <strong>Design, Development</strong><br>
+                      {!! get_sub_field('name') !!}, <strong>{!! get_sub_field('nickname') !!}</strong>
+                    </li>
+                  @endwhile
+                @endif
+              </ul>
+            @endwhile
+          @endif
+
+          @if (have_rows('research'))
+            @while (have_rows('research')) @php(the_row())
+              <ul class="list-unstyled mb-2">
+                @if (have_rows('member'))
+                  @while (have_rows('member')) @php(the_row())
+                    <li class="list-item">
+                      <strong>Research, Curation</strong><br>
+                      {!! get_sub_field('name') !!}, <strong>{!! get_sub_field('nickname') !!}</strong>
+                    </li>
+                  @endwhile
+                @endif
+              </ul>
+            @endwhile
+          @endif
+
+          @if (get_field('server_host'))
+            <ul class="list-unstyled mb-2">
+              <li class="list-item">
+                <strong>Server Host</strong><br>
+                <strong>{!! get_field('server_host') !!}</strong>
+              </li>
             </ul>
           @endif
         </div>

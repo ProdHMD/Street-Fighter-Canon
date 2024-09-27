@@ -16,11 +16,34 @@
                 #credits-section {
                     font-size: 1.5rem;
                     line-height: normal;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 1rem;
+                    }
+
+                    #mobile-credits {
+                        .list-unstyled {
+                            @include media-breakpoint-down(sm) {
+                                margin-bottom: 1rem;
+                            }
+                        }
+                    }
                 }
 
                 #sources-section {
                     font-size: 1.5rem;
                     line-height: normal;
+
+                    @include media-breakpoint-down(sm) {
+                        font-size: 1rem;
+                    }
+
+                    a {
+                        @include media-breakpoint-down(sm) {
+                            word-break: break-word;
+                            overflow-wrap: break-word;
+                        }
+                    }
                 }
             }
         }

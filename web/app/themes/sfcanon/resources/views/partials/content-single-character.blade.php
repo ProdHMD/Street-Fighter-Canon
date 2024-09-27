@@ -7,7 +7,7 @@
             <h1 class="title">{!! $title !!}</h1>
 
             <div class="row" id="chara-info">
-              <div class="col-xl-6" id="bio-text">
+              <div class="col-xl-6 col-8" id="bio-text">
                 @php(the_content())
               </div>
 
@@ -51,7 +51,7 @@
             ksort($games, SORT_NUMERIC);
           ?>
             <?php foreach($games as $game) : ?>
-              <li class="game col-xl-1 ps-1 pe-1" id="{!! $game->slug !!}"><img src="{!! $game->image['url'] !!}" class="img-fluid" /></li>
+              <li class="game col-xl-1 col-3 ps-1 pe-1" id="{!! $game->slug !!}"><img src="{!! $game->image['url'] !!}" class="img-fluid" /></li>
             <?php endforeach; ?>
           </ul>
       </header>
@@ -89,7 +89,7 @@
 <div class="fixed-top container-fluid p-0" id="biography-image">
   <div class="row">
     <div class="col-xl-6 offset-xl-6 d-flex justify-content-end">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="814.737" height="1080" viewBox="0 0 814.737 1080">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 815 1080">
         <defs>
           <clipPath id="clip-path">
             <path id="Image_Block" data-name="Image Block" d="M1105.263,6200v268.947L1534.737,7280H1920V6200Z" transform="translate(0 -6200)" fill="#fff"/>

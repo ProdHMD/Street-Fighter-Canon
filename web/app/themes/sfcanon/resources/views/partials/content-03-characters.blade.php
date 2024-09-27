@@ -25,7 +25,7 @@
         @if ($query->have_posts())
           @while ($query->have_posts()) @php($query->the_post())
             @php($chara_slug = str_replace(' ', '-', strtolower(get_the_title())))
-            <div class="col-xl-2 chara transition" id="chara-{!! $chara_slug !!}" data-name="{!! get_the_title() !!}" data-canon-debut="street-fighter-alpha-2" data-game-debut="street-fighter-ii">
+            <div class="col-xl-2 col-md-3 col-6 chara transition" id="chara-{!! $chara_slug !!}" data-name="{!! get_the_title() !!}" data-canon-debut="street-fighter-alpha-2" data-game-debut="street-fighter-ii">
               <a href="{!! get_permalink() !!}">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 175 250">
                   <defs>

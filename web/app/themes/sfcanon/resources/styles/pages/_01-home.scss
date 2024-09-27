@@ -6,6 +6,10 @@
         align-items: flex-end;
         min-height: 100vh;
 
+        @include media-breakpoint-down(sm) {
+            align-items: center;
+        }
+
         .logged-in & {
             min-height: calc(100vh - 2rem);
 
@@ -16,6 +20,10 @@
 
         #content {
             padding: 0 6.25rem 6.25rem;
+
+            @include media-breakpoint-down(sm) {
+                padding: 0 1.25rem 1.25rem;
+            }
 
             p {
                 max-width: 85%;
@@ -30,7 +38,7 @@
                     line-height: 1.25;
                 }
 
-                @include media-breakpoint-down(md) {
+                @include media-breakpoint-down(sm) {
                     font-size: 1.5rem;
                     line-height: 1;
                 }
@@ -45,7 +53,7 @@
                     font-size: 9.75rem;
                 }
 
-                @include media-breakpoint-down(md) {
+                @include media-breakpoint-down(sm) {
                     font-size: 5.75rem;
                 }
 
