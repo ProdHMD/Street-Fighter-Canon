@@ -88,6 +88,14 @@
                                         z-index: 2;
                                         position: relative;
                                         transition: all 0.5s 0.25s ease-in-out;
+
+                                        @include media-breakpoint-down(hd) {
+                                            font-size: 10rem;
+                                        }
+
+                                        @include media-breakpoint-down(xxl) {
+                                            font-size: 10rem;
+                                        }
                                                 
                                         @include media-breakpoint-down(xl) {
                                             font-size: 12rem;
@@ -101,6 +109,19 @@
                                     .entry-text {
                                         font-size: 1.5rem;
                                         position: relative;
+
+                                        @include media-breakpoint-down(hd) {
+                                            font-size: 1.25rem;
+                                        }
+
+                                        @include media-breakpoint-down(xxl) {
+                                            font-size: 1.125rem;
+                                        }
+
+                                        @include media-breakpoint-down(sm) {
+                                            font-size: 1.125rem;
+                                            line-height: normal;
+                                        }
 
                                         &::before {
                                             @include media-breakpoint-down(xl) {
@@ -118,11 +139,6 @@
                                                 background-color: #17171ad9;
                                                 box-shadow: 0 -1rem 1rem 2.5rem #17171ad9;
                                             }
-                                        }
-
-                                        @include media-breakpoint-down(sm) {
-                                            font-size: 1.125rem;
-                                            line-height: normal;
                                         }
 
                                         p {
@@ -183,6 +199,16 @@
                                 cursor: pointer;
                                 transition: .2s ease-in-out all;
 
+                                @include media-breakpoint-down(hd) {
+                                    padding-left: 2.5rem;
+                                    padding-right: 2.5rem;
+                                }
+
+                                @include media-breakpoint-down(xxl) {
+                                    padding-left: 1.625rem;
+                                    padding-right: 1.625rem;
+                                }
+
                                 @include media-breakpoint-down(xl) {
                                     padding-left: 0;
                                     padding-right: 0;
@@ -192,6 +218,11 @@
                                     padding-left: .5rem;
                                     padding-right: .5rem;
                                     transition: .2s ease-in-out all;
+
+                                    @include media-breakpoint-down(hd) {
+                                        padding-left: 1rem;
+                                        padding-right: 1rem;
+                                    }
 
                                     @include media-breakpoint-down(xl) {
                                         padding-left: 0;

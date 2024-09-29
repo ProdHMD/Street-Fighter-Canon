@@ -247,6 +247,18 @@ html {
                     opacity: 0;
                     transform: translateY(-50px);
 
+                    @include media-breakpoint-down(hd) {
+                        font-size: 12rem;
+                    }
+
+                    @include media-breakpoint-down(xxxl) {
+                        font-size: 12rem;
+                    }
+
+                    @include media-breakpoint-down(xxl) {
+                        font-size: 10rem;
+                    }
+
                     @include media-breakpoint-down(xl) {
                         font-size: 9.75rem;
                     }
@@ -263,6 +275,18 @@ html {
                     margin-bottom: 3.5rem;
                     opacity: 0;
                     transform: translateY(-50px);
+
+                    @include media-breakpoint-down(hd) {
+                        font-size: 2rem;
+                    }
+                    
+                    @include media-breakpoint-down(xxxl) {
+                        font-size: 2rem;
+                    }
+
+                    @include media-breakpoint-down(xxl) {
+                        font-size: 1.75rem;
+                    }
 
                     @include media-breakpoint-down(xl) {
                         max-width: none;

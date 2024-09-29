@@ -1,7 +1,11 @@
 @mixin text_size_72 {
     font-size: 4.5rem;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xxl) {
+        font-size: 4.25rem;
+    }
+
+    @include media-breakpoint-down(xl) {
         font-size: 4rem;
     }
 
@@ -13,7 +17,11 @@
 @mixin text_size_64 {
     font-size: 4rem;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xxl) {
+        font-size: 3.5rem;
+    }
+
+    @include media-breakpoint-down(xl) {
         font-size: 3rem;
     }
 
@@ -25,7 +33,11 @@
 @mixin text_size_48 {
     font-size: 3rem;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xxl) {
+        font-size: 2.625rem;
+    }
+
+    @include media-breakpoint-down(xl) {
         font-size: 2.25rem;
     }
 
@@ -37,7 +49,11 @@
 @mixin text_size_36 {
     font-size: 2.25rem;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xxl) {
+        font-size: 1.825rem;
+    }
+
+    @include media-breakpoint-down(xl) {
         font-size: 1.5rem;
     }
 
@@ -49,7 +65,11 @@
 @mixin text_size_24 {
     font-size: 1.5rem;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xxl) {
+        font-size: 1.25rem;
+    }
+
+    @include media-breakpoint-down(xl) {
         font-size: 1.125rem;
     }
 
@@ -61,7 +81,11 @@
 @mixin text_size_18 {
     font-size: 1.125rem;
 
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xxl) {
+        font-size: 1.075rem;
+    }
+
+    @include media-breakpoint-down(xl) {
         font-size: 1rem;
     }
 
