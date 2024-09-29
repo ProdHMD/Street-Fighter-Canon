@@ -45,11 +45,6 @@
                     line-height: 1.125;
                 }
 
-                @include media-breakpoint-down(xxxl) {
-                    font-size: 2rem;
-                    line-height: 1.125;
-                }
-
                 @include media-breakpoint-down(xxl) {
                     font-size: 1.75rem;
                     line-height: 1.125;
@@ -73,10 +68,6 @@
                 margin-bottom: 0;
 
                 @include media-breakpoint-down(hd) {
-                    font-size: 12rem;
-                }
-
-                @include media-breakpoint-down(xxxl) {
                     font-size: 12rem;
                 }
 

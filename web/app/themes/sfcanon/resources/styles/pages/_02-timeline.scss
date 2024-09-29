@@ -92,10 +92,6 @@
                                         @include media-breakpoint-down(hd) {
                                             font-size: 10rem;
                                         }
-
-                                        @include media-breakpoint-down(xxl) {
-                                            font-size: 10rem;
-                                        }
                                                 
                                         @include media-breakpoint-down(xl) {
                                             font-size: 12rem;
@@ -112,10 +108,6 @@
 
                                         @include media-breakpoint-down(hd) {
                                             font-size: 1.25rem;
-                                        }
-
-                                        @include media-breakpoint-down(xxl) {
-                                            font-size: 1.125rem;
                                         }
 
                                         @include media-breakpoint-down(sm) {

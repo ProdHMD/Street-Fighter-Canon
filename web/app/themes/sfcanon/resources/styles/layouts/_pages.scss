@@ -251,10 +251,6 @@ html {
                         font-size: 12rem;
                     }
 
-                    @include media-breakpoint-down(xxxl) {
-                        font-size: 12rem;
-                    }
-
                     @include media-breakpoint-down(xxl) {
                         font-size: 10rem;
                     }
@@ -277,10 +273,6 @@ html {
                     transform: translateY(-50px);
 
                     @include media-breakpoint-down(hd) {
-                        font-size: 2rem;
-                    }
-                    
-                    @include media-breakpoint-down(xxxl) {
                         font-size: 2rem;
                     }
 
