@@ -144,8 +144,10 @@ export const timeline = async (err) => {
     }
   });
 
+  // Set up carousel items
   const items = carouselElement.querySelectorAll('.carousel-item');
 
+  // Event that edits when carousel is sliding
   carouselElement.addEventListener('slide.bs.carousel', function (event) {
     const activeItem = carouselElement.querySelector('.carousel-item.active');
     const nextIndex = event.to; // Get the index of the next item
@@ -163,6 +165,7 @@ export const timeline = async (err) => {
     }, 2000); // Match this with the CSS transition duration
   });
 
+  // Event that edits after carousel is done sliding
   carouselElement.addEventListener('slid.bs.carousel', function () {
     const activeItem = carouselElement.querySelector('.carousel-item.active');
     

@@ -7,15 +7,16 @@ html {
     user-select: none;
     line-height: normal;
 
-    /** Hide Locomotive scrollbar */
-    .c-scrollbar {
-        display: none;
-    }
-
     body {
         font-size: 18px;
         font-size: clamp(100%, 1rem + 1vw, 18px);
         background-color: $black;
+
+        #wpadminbar {
+            @include media-breakpoint-down(wpmd) {
+                display: fixed;
+            }
+        }
     }
 }
 

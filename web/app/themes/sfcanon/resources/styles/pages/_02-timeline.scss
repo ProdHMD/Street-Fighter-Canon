@@ -6,7 +6,13 @@
         #main-content {
             padding-top: 6.25rem;
 
+            .logged-in & {
+                padding-top: calc(6.25rem + 32px);
 
+                @include media-breakpoint-down(wpmd) {
+                    padding-top: calc(6.25rem + 46px);
+                }
+            }
 
             #entry-row {
                 position: relative;
@@ -120,11 +126,11 @@
 
                                         @include media-breakpoint-down(uhd) {
                                             @media (max-height: 1079.98px) {
-                                                font-size: 1.25;
+                                                font-size: 1.25rem;
                                             }
                                             
                                             @media (min-height: 1080px) {
-                                                font-size: 1.5;
+                                                font-size: 1.5rem;
                                             }
                                         }
 
@@ -201,6 +207,7 @@
                             right: 0;
                             background-color: $black;
                             z-index: 10;
+                            padding-top: 1.25rem;
 
                             @include media-breakpoint-down(xl) {
                                 top: auto;
