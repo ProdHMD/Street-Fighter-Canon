@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation -- min and max should be allowed */
+
 /** Timeline page */
 .main {
     &#timeline {
@@ -89,6 +91,16 @@
                                         position: relative;
                                         transition: all 0.5s 0.25s ease-in-out;
 
+                                        @include media-breakpoint-down(uhd) {
+                                            @media (max-height: 1079.98px) {
+                                                font-size: 10rem;
+                                            }
+                                            
+                                            @media (min-height: 1080px) {
+                                                font-size: 14rem;
+                                            }
+                                        }
+
                                         @include media-breakpoint-down(hd) {
                                             font-size: 10rem;
                                         }
@@ -105,6 +117,16 @@
                                     .entry-text {
                                         font-size: 1.5rem;
                                         position: relative;
+
+                                        @include media-breakpoint-down(uhd) {
+                                            @media (max-height: 1079.98px) {
+                                                font-size: 1.25;
+                                            }
+                                            
+                                            @media (min-height: 1080px) {
+                                                font-size: 1.5;
+                                            }
+                                        }
 
                                         @include media-breakpoint-down(hd) {
                                             font-size: 1.25rem;
@@ -191,6 +213,18 @@
                                 cursor: pointer;
                                 transition: .2s ease-in-out all;
 
+                                @include media-breakpoint-down(uhd) {
+                                    @media (max-height: 1079.98px) {
+                                        padding-left: 2.5rem;
+                                        padding-right: 2.5rem;
+                                    }
+                                    
+                                    @media (min-height: 1080px) {
+                                        padding-left: 2rem;
+                                        padding-right: 2rem;
+                                    }
+                                }
+
                                 @include media-breakpoint-down(hd) {
                                     padding-left: 2.5rem;
                                     padding-right: 2.5rem;
@@ -210,6 +244,18 @@
                                     padding-left: .5rem;
                                     padding-right: .5rem;
                                     transition: .2s ease-in-out all;
+
+                                    @include media-breakpoint-down(uhd) {
+                                        @media (max-height: 1079.98px) {
+                                            padding-left: 1rem;
+                                            padding-right: 1rem;
+                                        }
+                                        
+                                        @media (min-height: 1080px) {
+                                            padding-left: .5rem;
+                                            padding-right: .5rem;
+                                        }
+                                    }
 
                                     @include media-breakpoint-down(hd) {
                                         padding-left: 1rem;

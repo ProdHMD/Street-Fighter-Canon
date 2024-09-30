@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation -- min and max should be allowed */
+
 /** Header container */
 #app {
     #header {
@@ -10,8 +12,6 @@
         z-index: 999;
 
         .brand {
-            @include text_size_64;
-
             font-family: $city_brawlers;
             font-weight: bold;
             text-decoration: none;
@@ -20,6 +20,8 @@
             margin: 0.532rem 0 0.532rem 6.25rem;
             opacity: 0;
             transform: translateY(-50px);
+
+            @include text_size_64;
 
             @include media-breakpoint-down(xl) {
                 margin: 0.532rem 0 0.532rem 3.75rem;
@@ -43,9 +45,9 @@
         }
 
         .nav-primary {
-            @include text_size_24;
-
             margin: 0.532rem 6.25rem 0.532rem 0;
+
+            @include text_size_24;
 
             @include media-breakpoint-down(xl) {
                 margin: 0.532rem 3.75rem;
@@ -104,9 +106,9 @@
         }
 
         .nav-secondary {
-            @include text_size_24;
-
             margin: 0.532rem 6.25rem 0.532rem 0;
+
+            @include text_size_24;
 
             @include media-breakpoint-down(xl) {
                 margin: 0.532rem 3.75rem;

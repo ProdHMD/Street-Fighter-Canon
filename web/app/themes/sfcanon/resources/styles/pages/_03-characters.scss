@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation -- min and max should be allowed */
+
 /** Characters pages */
 .main {
     /** Characters page */
@@ -11,6 +13,16 @@
                 
                 .title {
                     font-size: 7.875rem;
+
+                    @include media-breakpoint-down(uhd) {
+                        @media (max-height: 1079.98px) {
+                            font-size: 6.525rem;
+                        }
+                        
+                        @media (min-height: 1080px) {
+                            font-size: 7.875rem;
+                        }
+                    }
 
                     @include media-breakpoint-down(hd) {
                         font-size: 6.525rem;
@@ -177,6 +189,16 @@
                         font-size: 9.75rem;
                         line-height: 0.7054;
                         margin-bottom: 1rem;
+
+                        @include media-breakpoint-down(uhd) {
+                            @media (max-height: 1079.98px) {
+                                font-size: 7rem;
+                            }
+                            
+                            @media (min-height: 1080px) {
+                                font-size: 9.75rem;
+                            }
+                        }
 
                         @include media-breakpoint-down(hd) {
                             font-size: 7rem;

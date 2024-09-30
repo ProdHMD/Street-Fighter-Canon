@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation -- min and max should be allowed */
+
 /** HTML, body */
 html {
     overflow: hidden;
@@ -54,13 +56,13 @@ html {
             opacity: 1;
 
             .translate {
-                @include text_size_72;
-
                 font-family: $city_brawlers;
                 line-height: normal;
                 transform: translate3d(0, 0, 0);
                 will-change: transform;
                 transition: transform 0.5s ease-in-out;
+
+                @include text_size_72;
             }
         }
 
@@ -247,6 +249,16 @@ html {
                     opacity: 0;
                     transform: translateY(-50px);
 
+                    @include media-breakpoint-down(uhd) {
+                        @media (max-height: 1079.98px) {
+                            font-size: 12rem;
+                        }
+                        
+                        @media (min-height: 1080px) {
+                            font-size: 14rem;
+                        }
+                    }
+
                     @include media-breakpoint-down(hd) {
                         font-size: 12rem;
                     }
@@ -271,6 +283,16 @@ html {
                     margin-bottom: 3.5rem;
                     opacity: 0;
                     transform: translateY(-50px);
+
+                    @include media-breakpoint-down(uhd) {
+                        @media (max-height: 1079.98px) {
+                            font-size: 2rem;
+                        }
+                        
+                        @media (min-height: 1080px) {
+                            font-size: 2.25rem;
+                        }
+                    }
 
                     @include media-breakpoint-down(hd) {
                         font-size: 2rem;

@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation -- min and max should be allowed */
+
 /** About page */
 .main {
     &#about {
@@ -12,6 +14,16 @@
                     font-size: 7.875rem;
                     margin-bottom: 0;
 
+                    @include media-breakpoint-down(uhd) {
+                        @media (max-height: 1079.98px) {
+                            font-size: 6.125rem;
+                        }
+                        
+                        @media (min-height: 1080px) {
+                            font-size: 7.875rem;
+                        }
+                    }
+
                     @include media-breakpoint-down(hd) {
                         font-size: 6.125rem;
                     }
@@ -20,6 +32,16 @@
                 #credits-section {
                     font-size: 1.5rem;
                     line-height: normal;
+
+                    @include media-breakpoint-down(uhd) {
+                        @media (max-height: 1079.98px) {
+                            font-size: 1.25rem;
+                        }
+                        
+                        @media (min-height: 1080px) {
+                            font-size: 1.5rem;
+                        }
+                    }
 
                     @include media-breakpoint-down(hd) {
                         font-size: 1.25rem;
@@ -45,6 +67,16 @@
                 #sources-section {
                     font-size: 1.5rem;
                     line-height: normal;
+
+                    @include media-breakpoint-down(uhd) {
+                        @media (max-height: 1079.98px) {
+                            font-size: 1.25rem;
+                        }
+                        
+                        @media (min-height: 1080px) {
+                            font-size: 1.5rem;
+                        }
+                    }
 
                     @include media-breakpoint-down(hd) {
                         font-size: 1.25rem;

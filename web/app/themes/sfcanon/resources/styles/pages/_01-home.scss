@@ -1,3 +1,5 @@
+/* stylelint-disable media-feature-range-notation -- min and max should be allowed */
+
 /** Home page */
 .main {
     &#home {
@@ -40,6 +42,16 @@
                 opacity: 0;
                 transform: translateY(-50px);
 
+                @include media-breakpoint-down(uhd) {
+                    @media (max-height: 1079.98px) {
+                        font-size: 2rem;
+                    }
+                    
+                    @media (min-height: 1080px) {
+                        font-size: 2.25rem;
+                    }
+                }
+
                 @include media-breakpoint-down(hd) {
                     font-size: 2rem;
                     line-height: 1.125;
@@ -66,6 +78,16 @@
                 font-size: 14rem;
                 line-height: 0.7054;
                 margin-bottom: 0;
+
+                @include media-breakpoint-down(uhd) {
+                    @media (max-height: 1079.98px) {
+                        font-size: 12rem;
+                    }
+                    
+                    @media (min-height: 1080px) {
+                        font-size: 14rem;
+                    }
+                }
 
                 @include media-breakpoint-down(hd) {
                     font-size: 12rem;
