@@ -67,11 +67,6 @@ export const barbainit = async (err) => {
     tl.to('.page-transition', {
       pointerEvents: 'none',
     });
-
-    tl.to('.page-transition .list-unstyled', {
-      duration: 0,
-      rotate: 90,
-    });
   }
 
   function fromCurrentContent() {
