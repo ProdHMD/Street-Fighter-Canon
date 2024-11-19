@@ -76,7 +76,6 @@
     "roots/wordpress": "^6.4",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.1.0",
-    "wpackagist-theme/twentytwentyfour": "^1.0",
     "roots/acorn": "^4.0",
     "gplvault/gplvault": "^5.0",
     "acf/acfpro": "^6.2",
