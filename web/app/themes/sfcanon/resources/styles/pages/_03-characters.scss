@@ -10,6 +10,11 @@
 
             #top-content {
                 min-width: 100%;
+                margin-bottom: 2rem;
+
+                @include media-breakpoint-down(xl) {
+                    margin-bottom: 1rem;
+                }
                 
                 .title {
                     font-size: 7.875rem;
@@ -145,9 +150,9 @@
                     }
 
                     .chara {
-                        min-height: 26rem;
+                        min-height: 18rem;
                         position: relative;
-                        clip-path: url('../../images/svgs/sfc-chara-border.svg#clip-path');
+                        //clip-path: url('../../images/svgs/sfc-chara-border.svg#clip-path');
 
                         @include media-breakpoint-down(sm) {
                             min-height: 15rem;
