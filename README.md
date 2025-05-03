@@ -23,7 +23,7 @@ Please follow the installation methods at https://roots.io/sage/docs/installatio
 2. Globally install Yarn
   `npm install --global yarn`
 
-3. Direct your terminal path to web/app/themes/fronation and run the following:
+3. Direct your terminal path to web/app/themes/sfcanon and run the following:
   1. `yarn`
   2. `yarn build`
   3. `wp acorn optimize:clear`

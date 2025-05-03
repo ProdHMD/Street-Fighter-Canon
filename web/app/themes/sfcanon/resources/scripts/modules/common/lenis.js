@@ -18,6 +18,10 @@ export const lenisinit = async (err) => {
   // Set up lenis
   const lenis = new Lenis({
     duration: 1.2,
+    syncTouch: true,
+    syncTouchLerp: 0.12,
+    touchInertiaMultiplier: 120,
+    touchMultiplier: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   });
 

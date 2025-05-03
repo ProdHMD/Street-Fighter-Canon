@@ -139,8 +139,12 @@
                                         }
 
                                         @include media-breakpoint-down(sm) {
-                                            font-size: 1.125rem;
+                                            font-size: 1rem;
                                             line-height: normal;
+
+                                            @media (max-height: 667px) {
+                                                font-size: 0.75rem;
+                                            }
                                         }
 
                                         &::before {
