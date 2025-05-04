@@ -1,10 +1,10 @@
 import barba from '@barba/core';
 import Lenis from '@studio-freight/lenis';
 import { bg } from './bg.js';
-import { isotope } from './isotope.js';
 import { lenisinit } from './lenis.js';
 import { home } from '../pages/home.js';
 import { timeline } from '../pages/timeline.js';
+import { characters } from '../pages/characters.js';
 import gsap from 'gsap';
 
 export const barbainit = async (err) => {
@@ -282,7 +282,7 @@ export const barbainit = async (err) => {
 
     // Init isotopeJS
     if (document.body.classList.contains('characters')) {
-      isotope();
+      characters();
     }
   });
 
