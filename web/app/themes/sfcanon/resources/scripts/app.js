@@ -4,13 +4,13 @@ import 'jquery';
 import 'bootstrap';
 
 // Import custom modules
-import { lenisinit } from './modules/common/lenis.js';
-import { isotope } from './modules/common/isotope.js';
 import { bg } from './modules/common/bg.js';
+import { barbainit } from './modules/common/barba.js';
+import { lenisinit } from './modules/common/lenis.js';
+import { pageLoader } from './modules/common/pageLoader.js';
 import { home } from './modules/pages/home.js';
 import { timeline } from './modules/pages/timeline.js';
-import { barbainit } from './modules/common/barba.js';
-import { pageLoader } from './modules/common/pageLoader.js';
+import { characters } from './modules/pages/characters.js';
 
 /**
  * Application entrypoint
@@ -38,7 +38,7 @@ domReady(async () => {
 
   // Init isotopeJS
   if (document.body.classList.contains('characters')) {
-    isotope();
+    characters();
   }
 
   // Init barbaInitJS
