@@ -32,7 +32,7 @@
     {
       "type": "package",
       "package": {
-        "name": "gplvault/gplvault",
+        "name": "gplvault/gplvault-updater",
         "version": "5.3.9",
         "type": "wordpress-plugin",
         "dist": {
@@ -44,7 +44,7 @@
     {
       "type": "package",
       "package": {
-        "name": "acf/acfpro",
+        "name": "acf/advanced-custom-fields-pro",
         "version": "6.8.10",
         "type": "wordpress-plugin",
         "dist": {
@@ -77,8 +77,8 @@
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.1.0",
     "roots/acorn": "^4.0",
-    "gplvault/gplvault": "^5.3",
-    "acf/acfpro": "^6.8",
+    "gplvault/gplvault-updater": "^5.3",
+    "acf/advanced-custom-fields-pro": "^6.8",
     "wp-media/wp-rocket": "^3.23",
     "wpackagist-plugin/bye-felicia": "^1.1",
     "wpackagist-plugin/wordpress-seo": "^28.0",
