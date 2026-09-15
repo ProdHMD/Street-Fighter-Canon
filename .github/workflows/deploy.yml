@@ -235,6 +235,8 @@ jobs:
             | rsync -azv --delete --from0 --files-from=- \
                 --exclude 'vendor' \
                 --exclude '.env' \
+                --exclude 'wordfence-waf.php' \
+                --exclude='.user.ini' \
                 --exclude 'web/wp' \
                 --exclude 'web/app/uploads' \
                 --exclude "web/app/themes/${{ env.THEME_NAME }}/public" \
